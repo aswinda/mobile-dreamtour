@@ -1,5 +1,5 @@
-dreamtour.controller('RegularPackagesController', ['$scope', '$http','cfpLoadingBar', 
-  function RegularPackagesController($scope, $http, cfpLoadingBar) 
+dreamtour.controller('ExclusivePackagesController', ['$scope', '$http','cfpLoadingBar', 
+  function ExclusivePackagesController($scope, $http, cfpLoadingBar) 
 {
     $scope.packages = {};
     $scope.package = {};
@@ -7,7 +7,7 @@ dreamtour.controller('RegularPackagesController', ['$scope', '$http','cfpLoading
     // Get Packages
     $http(
     {
-        url     : host +  "getRegularPackages",
+        url     : host +  "getExclusivePackages",
         method  : "GET",
     })
     .success(function(data)
