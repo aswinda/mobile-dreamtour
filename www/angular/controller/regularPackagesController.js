@@ -2,6 +2,7 @@ dreamtour.controller('RegularPackagesController', ['$scope', '$http','cfpLoading
   function RegularPackagesController($scope, $http, cfpLoadingBar) 
 {
     $scope.packages = {};
+    $scope.package = {};
     $scope.state = 'list-regular';
     // Get Packages
     $http(
@@ -12,12 +13,20 @@ dreamtour.controller('RegularPackagesController', ['$scope', '$http','cfpLoading
     .success(function(data)
     {
         $scope.packages = data;
-        console.log($scope.packages);
+        //console.log($scope.packages);
     })
     .error(function (error)
     {
         console.log(error);
     });
+
+    $scope.detail = function(index)
+    {
+        $scope.package = $scope.packages[index];
+        $scope.state = 'detail';
+
+        console.log($scope.package);
+    }
 
 
 }]);
