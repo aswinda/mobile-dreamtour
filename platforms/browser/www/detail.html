@@ -1,0 +1,26 @@
+<div class="mdl-grid portfolio-max-width">
+    <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">{{ package.name }}</h2>
+        </div>
+        <div class="mdl-card__media">
+            <img class="article-image" ng-src="http://mobile-dreamtour.com/images/packages/{{package.photo}}" border="0" alt="">
+        </div>
+
+        <div class="mdl-grid portfolio-copy">
+            <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">IDR {{ package.price }}</h3>
+
+            <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Rincian Perjalanan</h3>
+            <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding " ng-bind-html="package.perjalanan | html"></div>
+
+            <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Detail</h3>
+            <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding " ng-bind-html="package.detail | html"></div>
+
+            <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Persyaratan</h3>
+            <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding " ng-bind-html="package.persyaratan | html"></div>
+
+            <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Informasi Lebih Lanjut</h3>
+            <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding " ng-bind-html="package.informasi_lanjut | html"></div>
+        </div>
+    </div>
+</div>
