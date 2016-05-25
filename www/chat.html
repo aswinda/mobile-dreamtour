@@ -43,6 +43,15 @@
 
     <!-- Regular Packages Controller -->
     <script src="angular/controller/chatController.js"></script>
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <style type="text/css">
+      #chatBox {
+        position:absolute;
+          height: 100%;
+          overflow : auto;
+      }
+    </style>
     
   </head>
 
@@ -52,7 +61,7 @@
             <div class="back"><a href="chatroom.html"><i class="fa fa-chevron-left"></i></a> <img src="img/umrah-plus.png" draggable="false"/></div>
             <div class="name">Umroh Desember 2016</div>
         </div>
-    <div  id="divChat">
+    <div  id="chatBox" schroll-bottom="chats">
     <ol class="chat">
     <li class="" ng-repeat="chat in chats" ng-class="{self: chat.user_id==user_id, other: chat.user_id != user_id}">
         
@@ -67,8 +76,8 @@
     </ol>
     </div>
     <div class="write">
-                <input type="text">
-                <a href="javascript:;" class="write-link send"></a>
+                <input type="text" ng-model="message">
+                <a ng-click="push(message)" class="write-link send"></a>
             </div>
 <!--     <div>
     <a class="submit" value="send">send</a>
@@ -77,8 +86,16 @@
     
     
   <script type="text/javascript">
-    var objDiv = document.getElementById("divChat");
-    objDiv.scrollTop = objDiv.scrollHeight;
+    // var objDiv = document.getElementById("divChat");
+    // objDiv.scrollTop = objDiv.scrollHeight;
+
+
+    // function jumpToPageBottom() {
+    //   $('html, body').scrollTop( $(document).height()-$(window).height());
+
+    // }
+
+    // jumpToPageBottom();
   </script>
     
   </body>
