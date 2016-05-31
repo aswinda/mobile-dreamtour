@@ -1,8 +1,8 @@
-dreamtour.controller('ChatController', ['$scope', '$http','cfpLoadingBar', '$timeout', 
-  function ChatController($scope, $http, cfpLoadingBar, $timeout) 
+dreamtour.controller('ChatController', ['$scope', '$http','cfpLoadingBar', '$timeout', '$auth', 
+  function ChatController($scope, $http, cfpLoadingBar, $timeout, $auth) 
 {
     $scope.chats = {};
-    $scope.user_id = 1;
+    $scope.user_id = localStorage.getItem('user');
     $scope.message = '';
     // Get Room
     $scope.onTimeout = function()
