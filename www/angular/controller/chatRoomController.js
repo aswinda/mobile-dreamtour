@@ -1,5 +1,5 @@
-dreamtour.controller('ChatRoomController', ['$scope', '$http','cfpLoadingBar', 
-  function ChatRoomController($scope, $http, cfpLoadingBar) 
+dreamtour.controller('ChatRoomController', ['$scope', '$http','cfpLoadingBar', '$auth', 
+  function ChatRoomController($scope, $http, cfpLoadingBar, $auth) 
 {
     $scope.rooms = {};
     // Get Room
@@ -7,12 +7,15 @@ dreamtour.controller('ChatRoomController', ['$scope', '$http','cfpLoadingBar',
     {
         url     : host +  "getChatRoom",
         method  : "GET",
-        params  : { id : 1 }
+        params  : { id : localStorage.getItem('user') }
     })
     .success(function(data)
     {
         $scope.rooms = data;
         console.log($scope.rooms);
+
+        // var user = localStorage.getItem('user');
+        // console.log(user);
     })
     .error(function (error)
     {

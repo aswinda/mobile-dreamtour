@@ -1,0 +1,165 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A portfolio template that uses Material Design Lite.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=low-dpi, user-scalable=0" />
+    <title>Dream Tour</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="css/material.grey-pink.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" style="-webkit-transform: translateZ(0);">
+        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
+            <div class="mdl-layout__header-row portfolio-logo-row">
+                <span class="mdl-layout__title">
+                    <div class="portfolio-logo"></div>
+                    <span class="mdl-layout__title">Mobile Apps</span>
+                </span>
+            </div>
+            <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
+                <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                    <a class="mdl-navigation__link is-active" href="index.html">Home</a>
+                    <a class="mdl-navigation__link" href="blog.html">Umroh Packages</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                <a class="mdl-navigation__link is-active" href="index.html">Home</a>
+                <a class="mdl-navigation__link" href="pilihpaket.html">Umroh Packages</a>
+                <a class="mdl-navigation__link" href="login.html">Login</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="mdl-grid">
+                <div class="demo-card-image mdl-card mdl-shadow--2dp" style="background: url('img/subuh.jpg') center / cover;">
+            <div class="mdl-card__title mdl-card--expand">
+              <p style="color:white;">
+                  <font style="font-size: x-large;">Subuh</font><br>
+                  <font class="dateNow"></font><br><br>
+                  <font class="subuh" style="font-size: -webkit-xxx-large"></font>
+              </p>
+            </div>
+          </div>
+          <div class="demo-card-image mdl-card mdl-shadow--2dp" style="background: url('img/dhuhur.jpg') center / cover;">
+            <div class="mdl-card__title mdl-card--expand">
+              <p style="color:white;">
+                  <font style="font-size: x-large;">Dhuhur</font><br>
+                  <font class="dateNow"></font><br><br>
+                  <font class="dhuhur" style="font-size: -webkit-xxx-large"></font>
+              </p>
+            </div>
+          </div>
+          <div class="demo-card-image mdl-card mdl-shadow--2dp" style="background: url('img/ashar.jpg') center / cover;">
+            <div class="mdl-card__title mdl-card--expand">
+              <p style="color:white;">
+                  <font style="font-size: x-large;">Ashar</font><br>
+                  <font class="dateNow"></font><br><br>
+                  <font class="ashar" style="font-size: -webkit-xxx-large"></font>
+              </p>
+            </div>
+          </div>
+          <div class="demo-card-image mdl-card mdl-shadow--2dp" style="background: url('img/magrib.jpg') center / cover;">
+            <div class="mdl-card__title mdl-card--expand">
+              <p style="color:white;">
+                  <font style="font-size: x-large;">Maghrib</font><br>
+                  <font class="dateNow"></font><br><br>
+                  <font class="maghrib" style="font-size: -webkit-xxx-large"></font>
+              </p>
+            </div>
+          </div>
+          <div class="demo-card-image mdl-card mdl-shadow--2dp" style="background: url('img/isya.jpg') center / cover;">
+            <div class="mdl-card__title mdl-card--expand">
+              <p style="color:white;">
+                  <font style="font-size: x-large;">Isya</font><br>
+                  <font class="dateNow"></font><br><br>
+                  <font class="isya" style="font-size: -webkit-xxx-large"></font>
+              </p>
+            </div>
+          </div>
+            </div>
+      
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">PT. Dreamtour</div>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/material.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script type="text/javascript">
+      jQuery(function($) {
+        //console.log('masuk');
+         $.getJSON('http://muslimsalat.com/daily.json?key=54b4773caae224e8d38cebd5a737ec37&jsoncallback=?', function (times)
+         {
+         
+            $('.subuh')
+             .append(times.items[0].fajr);
+            $('.dhuhur')
+             .append(times.items[0].dhuhr);
+             $('.ashar')
+             .append(times.items[0].asr);
+             $('.maghrib')
+             .append(times.items[0].maghrib);
+             $('.isya')
+             .append(times.items[0].isha);
+            $('.dateNow')
+             .append(moment().format("DD MMMM YYYY"));
+
+        //console.log(times);
+        });
+      });
+      
+    </script>
+
+    <!-- Image card -->
+    <style>
+      .demo-card-image.mdl-card {
+        margin : 2%;
+        width: 96%;
+        height: 200px;
+      }
+      .demo-card-image > .mdl-card__actions {
+        height: 52px;
+        padding: 16px;
+        background: rgba(0, 0, 0, 0.2);
+        color: #fff;
+      }
+      .demo-card-image__filename {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    </style>
+</body>
+
+</html>
+
+
