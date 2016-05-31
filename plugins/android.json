@@ -7,10 +7,34 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
+        },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
+        },
         "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         }
     },
