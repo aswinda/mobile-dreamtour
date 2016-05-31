@@ -7,61 +7,10 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-battery-status": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-device-motion": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-device-orientation": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         },
-        "cordova-plugin-globalization": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-vibration": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         }
     },
