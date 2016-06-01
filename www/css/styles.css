@@ -1,6 +1,7 @@
 body
 {
-  background-image: url('../img/background.jpg');
+  background: url('../img/back.jpg');
+  background-size: 100%;
 }
 
 .portfolio-header {
@@ -35,8 +36,7 @@ body
 }
 
 .portfolio-logo {
-  background: url('../img/logo.png') 50% no-repeat;
-  background-image: url('../img/logo.png');
+  background: url('../img/dream.png') 50% no-repeat;
   background-size: cover;
   height: 75px;
   width: 280px;
