@@ -42,6 +42,10 @@
         },
         "cordova-plugin-compat": {
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "202371380195",
+            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         }
     },
     "dependent_plugins": {}
