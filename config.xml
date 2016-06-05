@@ -95,4 +95,10 @@
     </platform>
     <engine name="android" spec="~4.0.2" />
     <engine name="ios" spec="~4.1.1" />
+    <gap:plugin name="phonegap-plugin-push" source="npm" spec="~1.6.2">
+            <params>
+            <param name="SENDER_ID" value="202371380195" />
+            </params>
+    </gap:plugin>
+    <preference name="android-build-tool" value="gradle" />
 </widget>
