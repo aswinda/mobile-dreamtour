@@ -123,18 +123,18 @@
         "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
         push.on('registration', function(data) {
-        console.log(data.registrationId);
-        $("#gcm_id").html(data.registrationId);
+            console.log(data.registrationId);
+            $("#gcm_id").html(data.registrationId);
         });
 
         push.on('notification', function(data) {
-        console.log(data.message);
-        alert(data.title+" Message: " +data.message);
-        // data.title,
-        // data.count,
-        // data.sound,
-        // data.image,
-        // data.additionalData
+            console.log(data.message);
+            alert(data.title+" Message: " +data.message);
+            // data.title,
+            // data.count,
+            // data.sound,
+            // data.image,
+            // data.additionalData
         });
 
         push.on('error', function(e) {
