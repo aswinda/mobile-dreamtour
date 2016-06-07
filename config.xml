@@ -37,7 +37,17 @@
         <icon density="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
         <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
         <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
-        <splash src="www/img/splash.png" />
+        <!-- you can use any density that exists in the Android project -->
+        <splash src="splash.png" density="land-hdpi"/>
+        <splash src="splash.png" density="land-ldpi"/>
+        <splash src="splash.png" density="land-mdpi"/>
+        <splash src="splash.png" density="land-xhdpi"/>
+
+        <splash src="splash.png" density="port-hdpi"/>
+        <splash src="splash.png" density="port-ldpi"/>
+        <splash src="splash.png" density="port-mdpi"/>
+        <splash src="splash.png" density="port-xhdpi"/>
+        <!-- <splash src="www/img/splash.png" /> -->
     </platform>
     <platform name="ios">
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
@@ -102,5 +112,7 @@
     </gap:plugin>
     <preference name="android-build-tool" value="gradle" />
     <preference name="SplashScreen" value="splash" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="3000" />
     <gap:splash src="splash.png" />
 </widget>
