@@ -50,14 +50,8 @@
 
 <body ng-app="dreamtour" ng-controller="ExclusivePackagesController">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
-            <div class="mdl-layout__header-row portfolio-logo-row">
-                <span class="mdl-layout__title">
-                    <div class="portfolio-logo"></div>
-                    <span class="mdl-layout__title">Mobile Apps</span>
-                </span>
-            </div>
-           
+        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header" style="position: absolute;
+    overflow-y: hidden;">
         </header>
         <div class="mdl-layout__drawer mdl-layout--small-screen-only">
             <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
@@ -68,7 +62,7 @@
         
         <!--  <main class="mdl-layout__content" ng-include="'list-regular.html'"></main> -->
         <main class="mdl-layout__content">
-
+            <div class="portfolio-logo" style="margin-top: 55px; margin-bottom: 25px; width: 100%;"></div>
             <div ng-include="state + '.html'"></div>
 
             
