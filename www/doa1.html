@@ -27,9 +27,46 @@
     <link rel="stylesheet" href="css/material.grey-pink.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Angular JS -->
+    <script src="js/angular.min.js"></script>
+    <!-- Angular Route Module -->
+    <script src="js/angular-route.js"></script>
+    <!-- Loading Bar -->
+    <script src="js/loading-bar.js"></script>
+    <link href="js/loading-bar.css" rel='stylesheet' />
+
+     <!-- App JS -->
+     <script src="angular/ng-modules/angular-ui-router/build/angular-ui-router.js"></script>
+    <script src="angular/ng-modules/satellizer/satellizer.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Regular Packages Controller -->
+    <script src="angular/controller/doaDetailController.js"></script>
+
+    <script type="text/javascript">
+      function getSearchParameters() {
+      var prmstr = window.location.search.substr(1);
+      return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+      }
+
+      function transformToAssocArray( prmstr ) {
+          var params = {};
+          var prmarr = prmstr.split("&");
+          for ( var i = 0; i < prmarr.length; i++) {
+              var tmparr = prmarr[i].split("=");
+              params[tmparr[0]] = tmparr[1];
+          }
+          return params;
+      }
+
+      var parameter = getSearchParameters();
+
+      console.log(parameter.id);
+    </script>
 </head>
 
-<body>
+<body ng-app="dreamtour" ng-controller="DoaDetailController">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header" style="position: absolute;
     overflow-y: hidden;">
@@ -43,8 +80,8 @@
         <main class="mdl-layout__content">
 
             <div class="portfolio-logo" style="margin-top: 55px; margin-bottom: 25px; width: 100%;"></div>
-            <div class="mdl-grid portfolio-max-width doa">
-               <img src="img/doa_3.jpg" style="width: 100%; height: 100%;">
+            <div class="mdl-grid portfolio-max-width doa" ng-repeat="image in doas[doa].images">
+               <img src="img/{{ image }}" style="width: 100%; height: 100%;"">
 
 
             </div>

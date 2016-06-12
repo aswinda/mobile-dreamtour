@@ -27,9 +27,25 @@
     <link rel="stylesheet" href="css/material.grey-pink.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Angular JS -->
+    <script src="js/angular.min.js"></script>
+    <!-- Angular Route Module -->
+    <script src="js/angular-route.js"></script>
+    <!-- Loading Bar -->
+    <script src="js/loading-bar.js"></script>
+    <link href="js/loading-bar.css" rel='stylesheet' />
+
+     <!-- App JS -->
+     <script src="angular/ng-modules/angular-ui-router/build/angular-ui-router.js"></script>
+    <script src="angular/ng-modules/satellizer/satellizer.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Regular Packages Controller -->
+    <script src="angular/controller/doaController.js"></script>
 </head>
 
-<body>
+<body ng-app="dreamtour" ng-controller="DoaController">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header" style="position: absolute;
     overflow-y: hidden;">
@@ -44,74 +60,14 @@
             <div class="mdl-grid portfolio-max-width">
               <div class="portfolio-logo" style="margin-top: 55px; margin-bottom: 25px; width: 100%;"></div>
                 <ul class="demo-list-item mdl-list">
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content"><a href="doa1.html">
-      Do'a Musafir Kepada Orang Yang Ditinggalkan</a>
-    </span>
+                  <li class="mdl-list__item" ng-repeat="doa in doas">
+                    <span class="mdl-list__item-primary-content"><a href="doa1.html?id={{ $index }}">
+                      {{ doa.name }}</a>
+                    </span>
 
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <a href="doa2.html">
-        Do'a Orang Yang Mukim Kepada Musafir
-      </a>
-    </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <a href="doa2.html">
-        Do'a Naik Kendaraan
-      </a>
-    </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <a href="doa2.html">
-        Do'a Safar
-      </a>
-      
-    </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <a href="doa2.html">
-        Do'a Kembali Dari Safar
-      </a>
-      
-    </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <a href="doa2.html">
-        Do'a Pergi ke Masjid
-      </a>
-      
-    </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <a href="doa2.html">
-        Do'a Masuk Masjid
-      </a>
-      
-    </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <a href="doa2.html">
-        Do'a Masuk Masjid
-      </a>
-
-    </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <a href="doa2.html">
-        Do'a Pembangunan
-      </a>
-    </span>
-  </li>
-</ul>
+                  </li>
+                  
+                </ul>
 
 
             </div>
