@@ -122,6 +122,39 @@
         push.on('registration', function(data) {
             console.log(data.registrationId);
             $("#gcm_id").html(data.registrationId);
+
+            // $.get("http://mobile-dreamtour.com/api/createDevice", { gcm_id: data.registrationId } )
+            //     .success(function(resp) {
+            //         alert('data' + resp);
+            //     }
+            //     .error(function(resp) {
+            //         alert('error' + resp);
+            //     });
+
+            // $.ajax({
+            //     url:"http://mobile-dreamtour.com/api/createDevice",
+            //     dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
+            //     success:function(json){
+            //         // do stuff with json (in this case an array)
+            //         alert("Success");
+            //     },
+            //     error:function(){
+            //         alert("Error");
+            //     }      
+            // });
+
+            // $.getJSON('http://mobile-dreamtour.com/api/createDevice',
+            // {
+            //     gcm_id: data.registrationId
+            // },
+            // function(result) {
+            //     console.log('result' + result);
+            // });
+
+            $.ajax({
+                url: "http://mobile-dreamtour.com/api/createDevice?gcm_id=" + data.registrationId,
+                dataType: 'jsonp'
+            });
         });
 
         push.on('notification', function(data) {
