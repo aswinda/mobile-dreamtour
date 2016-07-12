@@ -19,11 +19,11 @@
 #needle {
     position:absolute;
     background:url(../resource/needle.png);
-    width:66px;
+    width:200px;
     height:200px;
     z-index:1000;
     top:60px;
-    left:50%;
+    left:28%;
     -webkit-transform:translateX(-33px);    
 }
 
