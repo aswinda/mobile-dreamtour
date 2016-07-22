@@ -3,6 +3,8 @@ dreamtour.controller('AuthController', ['$scope', '$http','cfpLoadingBar', '$aut
 {
     $scope.data = {};
     $scope.currentUser = {};
+    $scope.user_id = localStorage.getItem('user');
+    $scope.skiped = false;
 
     $scope.login = function() 
     {
@@ -33,6 +35,14 @@ dreamtour.controller('AuthController', ['$scope', '$http','cfpLoadingBar', '$aut
         }, function(error) {
             console.log(error);
         });
+
+        $scope.user_id = localStorage.getItem('user');
+        $scope.skiped = true;
+    }
+
+    $scope.skip = function() 
+    {
+        $scope.skiped = true;
     }
 
 
