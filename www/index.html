@@ -25,6 +25,7 @@
     <title>Dream Tour</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="css/material.grey-pink.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
 
     <script src="js/jquery.min.js"></script>
@@ -49,16 +50,16 @@
 
 <body ng-app="dreamtour" ng-controller="AuthController">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" style="-webkit-transform: translateZ(0);">
-        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header" style="position: absolute;
+        <!-- <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header" style="position: absolute;
     overflow-y: hidden;">
-            <!-- <div class="mdl-layout__header-row portfolio-logo-row">
+            <div class="mdl-layout__header-row portfolio-logo-row">
                 <span class="mdl-layout__title">
                     <div class="portfolio-logo"></div>
                     <span id="gcm_id" class="mdl-layout__title">Mobile Apps</span>
                     <p id="gcm_id"></p>
                 </span>
-            </div> -->
-        </header>
+            </div>
+        </header> -->
         <!-- <div class="mdl-layout__drawer mdl-layout--small-screen-only">
             <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
                 <a class="mdl-navigation__link is-active" href="index.html">Home</a>
@@ -67,6 +68,7 @@
             </nav>
         </div> -->
         <!-- main index -->
+        <a href="#" class="back-button"><i class="back-button-i fa fa-1x fa-chevron-left"></i></a>
         <main ng-show="user_id != null || skiped == true" class="mdl-layout__content">
                 <div class="mdl-grid">
                     <div class="portfolio-logo" style="margin-top: 55px; margin-bottom: 25px; width: 100%;"></div>

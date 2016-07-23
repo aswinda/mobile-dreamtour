@@ -1,5 +1,5 @@
-dreamtour.controller('RegularPackagesController', ['$scope', '$http','cfpLoadingBar', 
-  function RegularPackagesController($scope, $http, cfpLoadingBar) 
+dreamtour.controller('RegularPackagesController', ['$scope', '$http','cfpLoadingBar', '$window',
+  function RegularPackagesController($scope, $http, cfpLoadingBar, $window) 
 {
     $scope.packages = {};
     $scope.package = {};
@@ -26,6 +26,14 @@ dreamtour.controller('RegularPackagesController', ['$scope', '$http','cfpLoading
         $scope.state = 'detail';
 
         console.log($scope.package);
+    }
+
+    $scope.prevPage = function()
+    {
+        if($scope.state == 'detail')
+            $scope.state = 'list-regular';
+        else
+            $window.location.href = '/pilihpaket.html';
     }
 
 

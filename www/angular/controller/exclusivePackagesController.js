@@ -1,5 +1,5 @@
-dreamtour.controller('ExclusivePackagesController', ['$scope', '$http','cfpLoadingBar', 
-  function ExclusivePackagesController($scope, $http, cfpLoadingBar) 
+dreamtour.controller('ExclusivePackagesController', ['$scope', '$http','cfpLoadingBar', '$window',
+  function ExclusivePackagesController($scope, $http, cfpLoadingBar, $window) 
 {
     $scope.packages = {};
     $scope.package = {};
@@ -28,5 +28,12 @@ dreamtour.controller('ExclusivePackagesController', ['$scope', '$http','cfpLoadi
         console.log($scope.package);
     }
 
+    $scope.prevPage = function()
+    {
+        if($scope.state == 'detail')
+            $scope.state = 'list-regular';
+        else
+            $window.location.href = '/pilihpaket.html';
+    }
 
 }]);
