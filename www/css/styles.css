@@ -210,3 +210,15 @@ footer {
     left: 13px; 
     z-index: 99;
 }
+
+.logo-dreamtour
+{
+  width: 100%;
+}
+
+.logo-box
+{
+  margin-top: 55px; 
+  margin-bottom: 25px; 
+  width: 100%;
+}
