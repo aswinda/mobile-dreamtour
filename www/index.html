@@ -68,6 +68,7 @@
             </nav>
         </div> -->
         <!-- main index -->
+        <input id="gcm_id" type="hidden" name="gcm_id">
         <a href="#" class="back-button"><i class="back-button-i fa fa-1x fa-chevron-left"></i></a>
         <main ng-show="user_id != null || skiped == true" class="mdl-layout__content">
                 <div class="mdl-grid">
@@ -192,7 +193,10 @@
 
         push.on('registration', function(data) {
             console.log(data.registrationId);
-            $("#gcm_id").html(data.registrationId);
+            $("#gcm_id").val(data.registrationId);
+
+            // console.log('dari luar');
+            // console.log($("#gcm_id").val());
 
             // $.get("http://mobile-dreamtour.com/api/createDevice", { gcm_id: data.registrationId } )
             //     .success(function(resp) {
