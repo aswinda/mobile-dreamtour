@@ -1,0 +1,40 @@
+dreamtour.controller('DoaDetailController', ['$scope', '$http','cfpLoadingBar', 
+  function DoaDetailController($scope, $http, cfpLoadingBar) 
+{
+    $scope.doas = [{name : "Doa Musafir Kepada Orang Yang Ditinggalkan", images : ['doa_musafir_orang_ditinggalkan.JPG']}, 
+                    { name : "Doa Orang Yang Mukim Kepada Musafir", images : ['doa_orang_mukmin_untuk_orang_musafir.JPG']}, 
+                    { name : "Doa Naik Kendaraan", images : ['doa_naik_kendaraan.JPG']}, 
+                    { name : "Doa Safar (Bepergian Jauh)", images : ['doa_safar_bepergian_jauh_1.JPG', 'doa_safar_bepergian_jauh_2.JPG', 'doa_safar_bepergian_jauh_3.JPG']}, 
+                    { name : "Doa Pergi (Berjalan) Ke Masjid", images : ['doa_pergi_berjalan_ke_masjid_1.JPG', 'doa_pergi_berjalan_ke_masjid_2.JPG', 'doa_pergi_berjalan_ke_masjid_3.JPG']},
+                    { name : "Doa Masuk Masjid", images : ['doa_masuk_masjid.JPG']},
+                    { name : "Doa Keluar Dari Masjid", images : ['doa_keluar_dari_masjid.JPG']},
+                    { name : "Doa Menghindari Kesesatan", images : ['doa_menghindari_kesesatan_1.JPG', 'doa_menghindari_kesesatan_2.JPG']},
+                    { name : "Doa Kekuatan Iman", images : ['doa_kekuatan_iman.JPG']},
+                    { name : "Doa Penyesalan", images : ['doa_penyesalan.JPG']},
+                    { name : "Doa Mohon Keadilan", images : ['doa_mohon_keadilan.JPG']},
+                    { name : "Doa Mohon Keselamatan", images : ['doa_mohon_keselamatan.JPG']},
+                    { name : "Doa Mohon Perlindungan", images : ['doa_mohon_perlindungan.JPG']},
+                    { name : "Doa Keluarga Maslahah", images : ['doa_keluarga_maslahah.JPG']},
+                    { name : "Doa Mohon Tempat yang Baik", images : ['doa_mohon_tempat_yang_baik.JPG']},
+                    { name : "Doa Mohon diberi Kemudahan", images : ['doa_mohon_diberi_kemudahan.JPG']},
+                    { name : "Doa Kelapangan hati", images : ['doa_kelapangan_hati.JPG']},
+                    { name : "Doa Mohon Jodoh dan Keturunan yang Baik", images : ['doa_mohon_jodoh_dan_keturunan_yang_baik.JPG']},
+                    { name : "Doa Mohon Terlepas dari Musibah", images : ['doa_terlepas_dari_musibah.JPG']},
+                    { name : "Doa Mohon Kemuliaan", images : ['doa_mohon_kemuliaan.JPG']},
+                    { name : "Doa Mensyukuri Ni'mat", images : ['doa_mensyukuri_nikmat_1.JPG', 'doa_mensyukuri_nikmat_2.JPG']},
+                    { name : "Doa Mohon Keluasan Rahmat", images : ['doa_mohon_keluasan_rahmat.JPG', 'doa_mohon_keluasan_rahmat_2.JPG']},
+                    { name : "Doa Selamat dari Kedengkian", images : ['doa_selamat_dari_kedengkian.JPG']},
+                    { name : "Doa Bertawakkal Kepada Allah", images : ['doa_bertawakal_kepada_allah.JPG']},
+                    { name : "Doa Diberi Pemimpin Agama", images : ['doa_diberi_pemimpin_agama.JPG']},
+                    { name : "Doa Melihat Keajaiban Alam", images : ['doa_melihat_keajaiban_alam.JPG']},
+                    { name : "Doa Lingkungan yang baik", images : ['doa_lingkungan_yang_baik.JPG']},
+                    { name : "Doa Curahan Rizqi", images : ['doa_curahan_rizky_1.JPG', 'doa_curahan_rizky_2.JPG']},
+                    { name : "Doa Agar Diberi Kedudukan yang Mulia", images : ['doa_agar_diberi_kedudukan_yang_mulia.JPG']},
+                    { name : "Doa Agar Diberi Hikmah", images : ['doa_agar_diberi_hikmah.JPG']},
+                    { name : "Doa Agar Diberi Bangunan Indah di Surga", images : ['doa_agar_diberi_bangunan_indah_di_surga.JPG']},
+                    { name : "Doa Agar Terlepas dari Kesulitan", images : ['doa_agar_terlepas_dari_kesulitan.JPG']},
+                    { name : "Doa ketika melihat ka’bah", images : ['doa_ketika_melihat_kabah_1.JPG', 'doa_ketika_melihat_kabah_2.JPG']}
+                ];
+    $scope.doa = parameter.id;
+    //console.log($scope.doa);    
+}]);
