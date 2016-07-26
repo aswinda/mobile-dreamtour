@@ -2,7 +2,8 @@
 @import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
 html, body {
-    background: #e5e5e5;
+    /*background: #e5e5e5;*/
+    background: url('../img/back.jpg');
     font-family: 'Lato', sans-serif;
     margin: 0px auto;
 }
@@ -11,7 +12,7 @@ html, body {
   color: inherit;
 }
 a{
-  color: rgba(82,179,217,0.9);
+  color: black;
 }
 
 /* M E N U */
@@ -23,7 +24,7 @@ a{
     right: 0px;
     width: 100%;
     height: 50px;
-    background: rgba(82,179,217,0.9);
+    background: rgba(255,255,255,0.9);
     z-index: 100;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -39,7 +40,7 @@ a{
     left: 0px;
     color: #fff;
     line-height: 50px;
-    font-size: 30px;
+    font-size: 18px;
     padding-left: 10px;
     cursor: pointer;
 }
@@ -66,7 +67,7 @@ a{
     font-family: 'Lato';
     font-size: 20px;
     font-weight: 300;
-    color: rgba(255,255,255,0.98);
+    color: rgba(0,0,0,0.98);
     cursor: default;
 }
 .last{
@@ -188,7 +189,7 @@ a{
     background: white;
     min-width: 50px;
     padding: 0px 10px 10px 10px;
-    border-radius: 2px;
+    border-radius: 10px;
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.07);
 }
 
