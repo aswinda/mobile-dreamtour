@@ -40,9 +40,9 @@ dreamtour.controller('CustomerServiceController', ['$scope', '$http','cfpLoading
     {
         $http(
         {
-            url     : host +  "getChat",
+            url     : host +  "getCsChat",
             method  : "GET",
-            params  : { id : parameter.id }
+            params  : { id : $scope.cs_group_id }
         })
         .success(function(data)
         {
@@ -66,9 +66,9 @@ dreamtour.controller('CustomerServiceController', ['$scope', '$http','cfpLoading
     {
         $http(
         {
-            url     : host +  "pushChat",
+            url     : host +  "pushCsChat",
             method  : "GET",
-            params  : { id : parameter.id, user : $scope.user_id, message : data }
+            params  : { id : $scope.cs_group_id, message : data }
         })
         .success(function(data)
         {
