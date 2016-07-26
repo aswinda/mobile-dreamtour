@@ -43,6 +43,27 @@
 
     <!-- Regular Packages Controller -->
     <script src="angular/controller/doaUmrohController.js"></script>
+
+    <script type="text/javascript">
+      function getSearchParameters() {
+      var prmstr = window.location.search.substr(1);
+      return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+      }
+
+      function transformToAssocArray( prmstr ) {
+          var params = {};
+          var prmarr = prmstr.split("&");
+          for ( var i = 0; i < prmarr.length; i++) {
+              var tmparr = prmarr[i].split("=");
+              params[tmparr[0]] = tmparr[1];
+          }
+          return params;
+      }
+
+      var parameter = getSearchParameters();
+
+      console.log(parameter.id);
+    </script>
 </head>
 
 <body ng-app="dreamtour" ng-controller="DoaUmrohController">
@@ -55,7 +76,7 @@
               </div>
                 <ul class="demo-list-item mdl-list">
                   <li class="mdl-list__item" ng-repeat="doa in doas">
-                    <span class="mdl-list__item-primary-content"><a href="doa1.html?id={{ $index }}">
+                    <span class="mdl-list__item-primary-content"><a href="doa-umroh-detail.html?id={{ $index }}">
                       {{ doa.name }}</a>
                     </span>
 
