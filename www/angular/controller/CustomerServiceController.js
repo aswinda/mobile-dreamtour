@@ -4,6 +4,37 @@ dreamtour.controller('CustomerServiceController', ['$scope', '$http','cfpLoading
     $scope.chats = {};
     $scope.user_id = localStorage.getItem('user');
     $scope.message = '';
+
+    $scope.cs_group_id = localStorage.getItem('cs_group_id');
+    alert($scope.cs_group_id);
+
+    $scope.init = function()
+    {
+        // Get customer group chat id
+        if($scope.cs_group_id == null)
+        {
+            var gcm_id = localStorage.getItem('gcm_id');
+
+            $http(
+            {
+                url     : host +  "getCsGroup",
+                method  : "GET",
+                params  : { gcm_id : gcm_id }
+            })
+            .success(function(data)
+            {
+                $scope.cs_group_id = data;
+
+                var group = JSON.stringify(data);
+                localStorage.setItem('cs_group_id', group);
+            })
+            .error(function (error)
+            {
+                console.log(error);
+            });
+        }
+    }
+    
     // Get Room
     $scope.onTimeout = function()
     {

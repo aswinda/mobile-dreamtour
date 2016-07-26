@@ -7,19 +7,13 @@ dreamtour.controller('AuthController', ['$scope', '$http','cfpLoadingBar', '$aut
     $scope.gcm_id = localStorage.getItem('gcm_id');
     $scope.skiped = false;
 
-    // Check Customer Service Group
+    // Get gcm_id on first load
     if($scope.gcm_id == null)
     {
         $scope.gcm_id = $("#gcm_id").val();
         var gcm = JSON.stringify($scope.gcm_id);
         localStorage.setItem('gcm_id', gcm);
-
-        // console.log("gcm_id");
-        // console.log($scope.gcm_id);
     }
-
-    // console.log("gcm_id");
-    // console.log(localStorage.getItem('gcm_id'));
 
     $scope.login = function() 
     {
