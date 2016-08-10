@@ -16,9 +16,12 @@ dreamtour.controller('TipsController', ['$scope', '$http','cfpLoadingBar',
                     { name : "Tips Meyimpan Uang", images : ['tips_menyimpan_uang.JPG']},
                     { name : "Tips di Hotel", images : ['tips_di_hotel.JPG']},
                     { name : "Tips Kebugaran saat Ibadah Haji", images : ['tips_kebugaran_saat_ibadah_haji.JPG']},
+                    { name : "Tips Shalat di Masjid Nabawi", images : ['tips_shalat_di_masjid_nabawi.JPG']},
+                    { name : "Tips Nyaman Beribadah", images : ['tips_nyaman_beribadah.JPG']},
                     { name : "MIQAT IHRAM", images : ['miqat_ihram_1.JPG', 'miqat_ihram_2.JPG']},
                     { name : "Larangan IHRAM", images : ['larangan_ihram_1.JPG', 'larangan_ihram_2.JPG', 'larangan_ihram_3.JPG', 'larangan_ihram_4.JPG', 'larangan_ihram_5.JPG']},
-                    { name : "IHRAM", images : ['ihram_1.JPG', 'ihram_2.JPG', 'ihram_3.JPG', 'ihram_4.JPG', 'ihram_5.JPG', 'ihram_6.JPG']}
+                    { name : "IHRAM", images : ['ihram_1.JPG', 'ihram_2.JPG', 'ihram_3.JPG', 'ihram_4.JPG', 'ihram_5.JPG', 'ihram_6.JPG']},
+                    { name : "Cara Menshalatkan Mayit", images : ['cara_menshalatkan_mayit_1.JPG', 'cara_menshalatkan_mayit_2.JPG', 'cara_menshalatkan_mayit_3.JPG', 'cara_menshalatkan_mayit_4.JPG', 'cara_menshalatkan_mayit_5.JPG', 'cara_menshalatkan_mayit_6.JPG', 'cara_menshalatkan_mayit_7.JPG', 'cara_menshalatkan_mayit_8.JPG', 'cara_menshalatkan_mayit_9.JPG', 'cara_menshalatkan_mayit_10.JPG']}
             ];
     $scope.doa = parameter.id;
     //console.log($scope.doa);    
