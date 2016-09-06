@@ -28,8 +28,8 @@
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <plugin name="phonegap-plugin-push" spec="1.6.0">
         <variable name="SENDER_ID" value="202371380195" />
-    </plugin>
-    <icon src="icon.png" />
+    </plugin><!-- 
+    <icon src="icon.png" /> -->
     <platform name="android">
         <icon density="ldpi" src="res/icon/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="res/icon/android/drawable-mdpi-icon.png" />
