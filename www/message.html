@@ -71,7 +71,7 @@
         <div class="msg" >
           <user>user : {{ user_id }}</user>
           <p>cs group : {{ cs_group_id }}</p>
-          <time></time>
+          <time>{{ gcm_id }}</time>
         </div>
       </li>
       <li ng-repeat="chat in chats" ng-class="{self: chat.user_id==user_id, other: chat.user_id != user_id}">
