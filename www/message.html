@@ -58,7 +58,7 @@
     
   </head>
 
-  <body ng-app="dreamtour" ng-controller="CustomerServiceController" ng-init="init()">
+  <body ng-app="dreamtour" ng-controller="CustomerServiceController">
 
     <div class="menu">
             <div class="back"><a href="chatroom.html"><i class="fa fa-chevron-left"></i></a> </div>
@@ -66,11 +66,11 @@
         </div>
     <div  id="chatBox" schroll-bottom="chats">
       <ol class="chat">
-      <li ng-class="{self: chat.user_id==user_id, other: chat.user_id != user_id}">
+      <li>
           
         <div class="msg" >
-          <user>user : {{ user_id }}</user>
-          <p>cs group : {{ cs_group_id }}</p>
+          <user>{{ user_id }}</user>
+          <p>{{ cs_group_id }}</p>
           <time>{{ gcm_id }}</time>
         </div>
       </li>

@@ -8,11 +8,8 @@ dreamtour.controller('CustomerServiceController', ['$scope', '$http','cfpLoading
     $scope.cs_group_id = localStorage.getItem('cs_group_id');
     $scope.gcm_id = localStorage.getItem('gcm_id');
 
-    $scope.init = function()
+    if($scope.cs_group_id == null)
     {
-        // Get customer group chat id
-        if($scope.cs_group_id == null)
-        {
             var gcm_id = localStorage.getItem('gcm_id');
 
             $http(
@@ -32,7 +29,12 @@ dreamtour.controller('CustomerServiceController', ['$scope', '$http','cfpLoading
             {
                 console.log(error);
             });
-        }
+    }
+
+    $scope.init = function()
+    {
+        // Get customer group chat id
+        
     }
     
     // Get Room
