@@ -7,8 +7,6 @@ dreamtour.controller('CustomerServiceController', ['$scope', '$http','cfpLoading
 
     $scope.cs_group_id = localStorage.getItem('cs_group_id');
     $scope.gcm_id = localStorage.getItem('gcm_id');
-    
-    alert($scope.cs_group_id);
 
     $scope.init = function()
     {
