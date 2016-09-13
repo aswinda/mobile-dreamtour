@@ -65,23 +65,31 @@
             <div class="name">Customer Service</div>
         </div>
     <div  id="chatBox" schroll-bottom="chats">
-    <ol class="chat">
-    <li class="" ng-repeat="chat in chats" ng-class="{self: chat.user_id==user_id, other: chat.user_id != user_id}">
-        
-      <div class="msg" >
-        <user>{{ chat.name }}</user>
-        <p>{{ chat.message }}</p>
-        <time>{{ chat.created_at }}</time>
-      </div>
-    </li>
+      <ol class="chat">
+      <li ng-class="{self: chat.user_id==user_id, other: chat.user_id != user_id}">
+          
+        <div class="msg" >
+          <user>user : {{ user_id }}</user>
+          <p>cs group : {{ cs_group_id }}</p>
+          <time></time>
+        </div>
+      </li>
+      <li ng-repeat="chat in chats" ng-class="{self: chat.user_id==user_id, other: chat.user_id != user_id}">
+          
+        <div class="msg" >
+          <user>{{ chat.name }}</user>
+          <p>{{ chat.message }}</p>
+          <time>{{ chat.created_at }}</time>
+        </div>
+      </li>
 
-      
-    </ol>
+        
+      </ol>
     </div>
     <div class="write">
-                <input type="text" ng-model="message">
-                <a ng-click="push(message)" class="write-link send"></a>
-            </div>
+        <input type="text" ng-model="message">
+        <a ng-click="push(message)" class="write-link send"></a>
+    </div>
 <!--     <div>
     <a class="submit" value="send">send</a>
     <input class="textarea" type="text" placeholder="Type here!"/>
