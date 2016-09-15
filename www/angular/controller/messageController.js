@@ -1,5 +1,5 @@
-dreamtour.controller('CustomerServiceController', ['$scope', '$http','cfpLoadingBar', '$timeout', '$auth', 
-  function CustomerServiceController($scope, $http, cfpLoadingBar, $timeout, $auth) 
+dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$timeout', '$auth', 
+  function MessageController($scope, $http, cfpLoadingBar, $timeout, $auth) 
 {
     $scope.chats = {};
     $scope.user_id = localStorage.getItem('user');
