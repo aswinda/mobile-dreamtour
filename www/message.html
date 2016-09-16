@@ -66,14 +66,14 @@
         </div>
     <div  id="chatBox" schroll-bottom="chats">
       <ol class="chat">
-      <li class="self">
+      <!-- <li class="self">
           
         <div class="msg" >
           <user>{{ user_id }}</user>
           <p>{{ cs_group_id }}</p>
           <time>{{ gcm_id }}</time>
         </div>
-      </li>
+      </li> -->
       <li ng-repeat="chat in chats" ng-class="{self: chat.user_id==user_id, other: chat.user_id != user_id}">
           
         <div class="msg" >
