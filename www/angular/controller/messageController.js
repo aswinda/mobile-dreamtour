@@ -10,30 +10,30 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
     // $scope.gcm_id = localStorage.getItem('gcm_id');
 
     $scope.cs_group_id = '';
-    $scope.gcm_id = 'fJlM_yTiYfA:APA91bGRH6y5srzttHGuexpGty6MXYPBRgk8DZA7nLqxaes-RGellayPiAG1CJwuSKzda3aVIq3rk9IGahuAMxGdsf_3GtGW_h8OQGOzXJelP7H9lr5at_wJbWH7jDwunDsAEKnRrFdH';
+    //$scope.gcm_id = 'fJlM_yTiYfA:APA91bGRH6y5srzttHGuexpGty6MXYPBRgk8DZA7nLqxaes-RGellayPiAG1CJwuSKzda3aVIq3rk9IGahuAMxGdsf_3GtGW_h8OQGOzXJelP7H9lr5at_wJbWH7jDwunDsAEKnRrFdH';
+    $scope.gcm_id = parameter.gcm;
+    // if($scope.cs_group_id == null || $scope.cs_group_id == '')
+    // {
+    //     var gcm_id = localStorage.getItem('gcm_id');
 
-    if($scope.cs_group_id == null || $scope.cs_group_id == '')
-    {
-        var gcm_id = localStorage.getItem('gcm_id');
+    //     $http(
+    //     {
+    //         url     : host +  "getCsGroup",
+    //         method  : "GET",
+    //         params  : { gcm_id : gcm_id }
+    //     })
+    //     .success(function(data)
+    //     {
+    //         $scope.cs_group_id = data;
 
-        $http(
-        {
-            url     : host +  "getCsGroup",
-            method  : "GET",
-            params  : { gcm_id : gcm_id }
-        })
-        .success(function(data)
-        {
-            $scope.cs_group_id = data;
-
-            var group = JSON.stringify(data);
-            localStorage.setItem('cs_group_id', group);
-        })
-        .error(function (error)
-        {
-            console.log(error);
-        });
-    }
+    //         var group = JSON.stringify(data);
+    //         localStorage.setItem('cs_group_id', group);
+    //     })
+    //     .error(function (error)
+    //     {
+    //         console.log(error);
+    //     });
+    // }
 
     // $scope.init = function()
     // {
