@@ -8,7 +8,7 @@ dreamtour.controller('AuthController', ['$scope', '$http','cfpLoadingBar', '$aut
     $scope.skiped = false;
 
     // Get gcm_id on first load
-    if($scope.gcm_id == null)
+    if($scope.gcm_id == null || $scope.gcm_id =="")
     {
         $scope.gcm_id = $("#gcm_id").val();
         var gcm = JSON.stringify($scope.gcm_id);
