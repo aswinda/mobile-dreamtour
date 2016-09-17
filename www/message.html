@@ -75,9 +75,9 @@
           <time>{{ gcm_id }}</time>
         </div>
       </li> -->
-      <input type="text" ng-model="cs_group_id">
-      <input type="text" ng-model="gcm_id">
-      <li ng-repeat="chat in chats" ng-class="{self: chat.user_id==user_id, other: chat.user_id != user_id}">
+      <!-- <input type="text" ng-model="cs_group_id">
+      <input type="text" ng-model="gcm_id"> -->
+      <li ng-repeat="chat in chats" ng-class="{self: chat.user== 'USER', other: chat.user == 'ADMIN'}">
           
         <div class="msg" >
           <user>{{ chat.name }}</user>
