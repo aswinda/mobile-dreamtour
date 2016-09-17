@@ -71,7 +71,7 @@
             </nav>
         </div> -->
         <!-- main index -->
-        <input id="gcm_id" ng-model="gcm_id" type="text" name="gcm_id">
+        <input id="gcm_id" ng-model="gcm_id" type="hidden" name="gcm_id">
         <a href="#" class="back-button"><i class="back-button-i fa fa-1x fa-chevron-left"></i></a>
         <main ng-show="user_id != null || skiped == true" class="mdl-layout__content">
                 <div class="mdl-grid">
@@ -125,16 +125,7 @@
                           <img src="img/adzan.png" style="width:100%; height:100%;">
                         </a>
                         <p style="color:white;">Adzan</p>
-                    </div>
-
-                    <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone" style="text-align:center;"><!-- FAB button with ripple -->
-                        <a href="jadwal-sholat.html" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" style="box-shadow : none; width:100px; height:100px; margin-bottom: 5px;">
-                          <img src="img/adzan.png" style="width:100%; height:100%;">
-                        </a>
-                        <p style="color:white;">{{ gcm_id }}</p>
-                        <input ng-model="gcm_id" type="text">
-                    </div>
-                   
+                    </div>                  
                    
                 </div>
       
