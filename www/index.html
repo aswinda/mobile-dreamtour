@@ -46,6 +46,9 @@
     <script src="angular/ng-modules/satellizer/satellizer.js"></script>
     <!-- Regular Packages Controller -->
     <script src="angular/controller/authController.js"></script>
+    <script type="text/javascript">
+        var gcm = "aswin";
+    </script>
 </head>
 
 <body ng-app="dreamtour" ng-controller="AuthController" >
@@ -94,7 +97,7 @@
                         <p style="color:white;">Group Chat</p>
                     </div>
                     <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone" style="text-align:center;"><!-- FAB button with ripple -->
-                        <a href="message.html" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" style="box-shadow : none; width:100px; height:100px; margin-bottom: 5px;">
+                        <a href="message.html" onclick="location.href=this.href+'?gcm='+gcm;return false;" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" style="box-shadow : none; width:100px; height:100px; margin-bottom: 5px;">
                           <img src="img/message.png" style="width:100%; height:100%;">
                         </a>
                         <p style="color:white;">Customer Service</p>
@@ -202,6 +205,7 @@
         push.on('registration', function(data) {
             console.log(data.registrationId);
             $("#gcm_id").val(data.registrationId);
+            gcm = data.registrationId;
 
             // console.log('dari luar');
             // console.log($("#gcm_id").val());
