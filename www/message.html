@@ -64,16 +64,19 @@
             <div class="back"><a href="chatroom.html"><i class="fa fa-chevron-left"></i></a> </div>
             <div class="name">Customer Service</div>
         </div>
+
     <div  id="chatBox" schroll-bottom="chats">
       <ol class="chat">
-      <li class="self">
+      <!-- <li class="self">
           
         <div class="msg" >
           <user>{{ user_id }}</user>
           <p>{{ cs_group_id }}</p>
           <time>{{ gcm_id }}</time>
         </div>
-      </li>
+      </li> -->
+      <input type="text" ng-model="cs_group_id">
+      <input type="text" ng-model="gcm_id">
       <li ng-repeat="chat in chats" ng-class="{self: chat.user_id==user_id, other: chat.user_id != user_id}">
           
         <div class="msg" >
