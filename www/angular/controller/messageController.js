@@ -2,11 +2,15 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
   function MessageController($scope, $http, cfpLoadingBar, $timeout, $auth) 
 {
     $scope.chats = {};
-    $scope.user_id = localStorage.getItem('user');
+    //$scope.user_id = localStorage.getItem('user');
+    $scope.user_id = 1;
     $scope.message = '';
 
-    $scope.cs_group_id = localStorage.getItem('cs_group_id');
-    $scope.gcm_id = localStorage.getItem('gcm_id');
+    // $scope.cs_group_id = localStorage.getItem('cs_group_id');
+    // $scope.gcm_id = localStorage.getItem('gcm_id');
+
+    $scope.cs_group_id = 21;
+    $scope.gcm_id = 'fJlM_yTiYfA:APA91bGRH6y5srzttHGuexpGty6MXYPBRgk8DZA7nLqxaes-RGellayPiAG1CJwuSKzda3aVIq3rk9IGahuAMxGdsf_3GtGW_h8OQGOzXJelP7H9lr5at_wJbWH7jDwunDsAEKnRrFdH';
 
     if($scope.cs_group_id == null || $scope.cs_group_id == '')
     {
