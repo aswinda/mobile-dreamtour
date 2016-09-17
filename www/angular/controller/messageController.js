@@ -64,9 +64,9 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
         // var scroller = document.getElementById("autoscroll");
         // scroller.scrollTop = scroller.scrollHeight;
         // console.log(scroller.scrollTop + ' ' + scroller.scrollHeight);
-        mytimeout = $timeout($scope.onTimeout,30000);
+        mytimeout = $timeout($scope.onTimeout,2000);
     }
-    var mytimeout = $timeout($scope.onTimeout,5000);
+    var mytimeout = $timeout($scope.onTimeout,1000);
 
     $scope.push = function(data)
     {
