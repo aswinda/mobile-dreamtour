@@ -8,7 +8,7 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
     $scope.cs_group_id = localStorage.getItem('cs_group_id');
     $scope.gcm_id = localStorage.getItem('gcm_id');
 
-    if($scope.cs_group_id == null)
+    if($scope.cs_group_id == null || $scope.cs_group_id == '')
     {
             var gcm_id = localStorage.getItem('gcm_id');
 
