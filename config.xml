@@ -28,7 +28,9 @@
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <plugin name="phonegap-plugin-push" spec="1.6.0">
         <variable name="SENDER_ID" value="202371380195" />
-    </plugin><!-- 
+    </plugin>
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
+    <!-- 
     <icon src="icon.png" /> -->
     <!-- Define app icon for each platform. -->
     <!-- <icon src="icon.png" />
