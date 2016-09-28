@@ -67,6 +67,9 @@
         "phonegap-plugin-push": {
             "SENDER_ID": "202371380195",
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         }
     },
     "dependent_plugins": {
@@ -74,6 +77,9 @@
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         },
         "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
+        },
+        "cordova-plugin-app-event": {
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         }
     }
