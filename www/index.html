@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="css/styles.css" />
 
     <script src="js/jquery.min.js"></script>
-    
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Angular JS -->
@@ -125,10 +125,10 @@
                           <img src="img/adzan.png" style="width:100%; height:100%;">
                         </a>
                         <p style="color:white;">Adzan</p>
-                    </div>                  
-                   
+                    </div>
+
                 </div>
-      
+
         </main>
 
         <!-- login -->
@@ -163,7 +163,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </main>
     </div>
     <style type="text/css">
@@ -188,70 +188,78 @@
     <script src="js/index.js"></script>
     <script type="text/javascript">
         document.addEventListener("deviceready",onDeviceReady,false);
-        function onDeviceReady(){
-        console.log("Device Ready")
-        var push = PushNotification.init({ "android": {"senderID": "202371380195"},
-        "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
+        function onDeviceReady()
+        {
+            console.log("Device Ready")
+            var push = PushNotification.init({ "android": {"senderID": "202371380195"},
+                "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
-        push.on('registration', function(data) {
-            console.log(data.registrationId);
-            $("#gcm_id").val(data.registrationId);
-            gcm = data.registrationId;
+            push.on('registration', function(data) {
+                console.log(data.registrationId);
+                $("#gcm_id").val(data.registrationId);
+                gcm = data.registrationId;
 
-            // console.log('dari luar');
-            // console.log($("#gcm_id").val());
+                // console.log('dari luar');
+                // console.log($("#gcm_id").val());
 
-            // $.get("http://mobile-dreamtour.com/api/createDevice", { gcm_id: data.registrationId } )
-            //     .success(function(resp) {
-            //         alert('data' + resp);
-            //     }
-            //     .error(function(resp) {
-            //         alert('error' + resp);
-            //     });
+                // $.get("http://mobile-dreamtour.com/api/createDevice", { gcm_id: data.registrationId } )
+                //     .success(function(resp) {
+                //         alert('data' + resp);
+                //     }
+                //     .error(function(resp) {
+                //         alert('error' + resp);
+                //     });
 
-            // $.ajax({
-            //     url:"http://mobile-dreamtour.com/api/createDevice",
-            //     dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
-            //     success:function(json){
-            //         // do stuff with json (in this case an array)
-            //         alert("Success");
-            //     },
-            //     error:function(){
-            //         alert("Error");
-            //     }      
-            // });
+                // $.ajax({
+                //     url:"http://mobile-dreamtour.com/api/createDevice",
+                //     dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
+                //     success:function(json){
+                //         // do stuff with json (in this case an array)
+                //         alert("Success");
+                //     },
+                //     error:function(){
+                //         alert("Error");
+                //     }
+                // });
 
-            // $.getJSON('http://mobile-dreamtour.com/api/createDevice',
-            // {
-            //     gcm_id: data.registrationId
-            // },
-            // function(result) {
-            //     console.log('result' + result);
-            // });
+                // $.getJSON('http://mobile-dreamtour.com/api/createDevice',
+                // {
+                //     gcm_id: data.registrationId
+                // },
+                // function(result) {
+                //     console.log('result' + result);
+                // });
 
-            $.ajax({
-                url: "http://mobile-dreamtour.com/api/createDevice?gcm_id=" + data.registrationId,
-                dataType: 'jsonp'
+                $.ajax({
+                    url: "http://mobile-dreamtour.com/api/createDevice?gcm_id=" + data.registrationId,
+                    dataType: 'jsonp'
+                });
             });
-        });
 
-        push.on('notification', function(data) {
-            console.log(data.message);
-            alert(data.title+" Message: " +data.message);
-            // data.title,
-            // data.count,
-            // data.sound,
-            // data.image,
-            // data.additionalData
-        });
+            push.on('notification', function(data) {
+                console.log(data.message);
+                alert(data.title+" Message: " +data.message);
+                // data.title,
+                // data.count,
+                // data.sound,
+                // data.image,
+                // data.additionalData
+            });
 
-        push.on('error', function(e) {
-        console.log(e.message);
-        });
+            push.on('error', function(e) {
+            console.log(e.message);
+            });
+
+            cordova.plugins.notification.local.schedule({
+                id: 1,
+                text: 'Test Message 1',
+                icon: 'http://image.flaticon.com/teams/1-freepik.jpg',
+                smallIcon: 'res://cordova',
+                sound: null,
+                data: { test: id }
+            });
         }
     </script>
 </body>
 
 </html>
-
-
