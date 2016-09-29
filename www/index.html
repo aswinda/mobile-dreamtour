@@ -215,10 +215,12 @@
             });
 
             callback = function () {
+                var d = new Date();
+
                 cordova.plugins.notification.local.schedule({
                     id: 1,
                     title: "satu repeat",
-                    text: "local notification test 1",
+                    text: "local notification test 1" + d,
                     every: "minutes",
                     sound: "file://sounds.mp3",
                     icon: "http://image.flaticon.com/teams/1-freepik.jpg",
