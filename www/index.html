@@ -240,14 +240,6 @@
             var maghrib = new Date();
             var isha = new Date();
 
-            $.getJSON('http://muslimsalat.com/daily.json?key=54b4773caae224e8d38cebd5a737ec37&jsoncallback=?', function (times)
-            {
-                fajr = setDateTime(fajr, times.items[0].fajr);
-                //console.log(times.items[0].fajr);
-                //console.log(fajr);
-
-            });
-
             callback = function () {
                 console.log(fajr);
 
@@ -262,7 +254,13 @@
                 }, callback);
             };
 
-            callback();
+            $.getJSON('http://muslimsalat.com/daily.json?key=54b4773caae224e8d38cebd5a737ec37&jsoncallback=?', function (times)
+            {
+                fajr = setDateTime(fajr, times.items[0].fajr);
+                //console.log(times.items[0].fajr);
+                //console.log(fajr);
+                callback();
+            });
 
             cordova.plugins.notification.local.on("click", function (notification) {
                 joinMeeting(notification.data.meetingId);
