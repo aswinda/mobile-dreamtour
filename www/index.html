@@ -185,6 +185,7 @@
     </style>
     <script type="text/javascript" src="cordova.js"></script>
     <script src="js/material.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script type="text/javascript">
         document.addEventListener("deviceready",onDeviceReady,false);
@@ -212,6 +213,35 @@
 
             push.on('error', function(e) {
                 console.log(e.message);
+            });
+
+            function setDateTime(date, time) {
+                var index = time.indexOf("."); // replace with ":" for differently displayed time.
+                var index2 = time.indexOf(" ");
+
+                var hours = time.substring(0, index);
+                var minutes = time.substring(index + 1, index2);
+
+                var mer = time.substring(index2 + 1, time.length);
+                if (mer == "PM"){
+                    hours = hours + 12;
+                }
+
+
+                date.setHours(hours);
+                date.setMinutes(minutes);
+                date.setSeconds("00");
+
+                return date;
+            }
+
+            $.getJSON('http://muslimsalat.com/daily.json?key=54b4773caae224e8d38cebd5a737ec37&jsoncallback=?', function (times)
+            {
+                var d = new Date();
+                d = setDateTime(times.items[0].fajr);
+
+                console.log('tanggal');
+                console.log(d);
             });
 
             callback = function () {
