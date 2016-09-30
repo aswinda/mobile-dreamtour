@@ -216,7 +216,7 @@
             });
 
             function setDateTime(date, time) {
-                var index = time.indexOf("."); // replace with ":" for differently displayed time.
+                var index = time.indexOf(":"); // replace with ":" for differently displayed time.
                 var index2 = time.indexOf(" ");
 
                 var hours = time.substring(0, index);
@@ -224,9 +224,8 @@
 
                 var mer = time.substring(index2 + 1, time.length);
                 if (mer == "pm"){
-                    hours = hours + 12;
+                    hours = parseInt(hours) + 12;
                 }
-
 
                 date.setHours(hours);
                 date.setMinutes(minutes);
@@ -235,30 +234,33 @@
                 return date;
             }
 
+            var fajr = new Date();
+            var dhuhr = new Date();
+            var asr = new Date();
+            var maghrib = new Date();
+            var isha = new Date();
+
             $.getJSON('http://muslimsalat.com/daily.json?key=54b4773caae224e8d38cebd5a737ec37&jsoncallback=?', function (times)
             {
-                var d = new Date();
-                d = setDateTime(times.items[0].fajr);
+                fajr = setDateTime(fajr, times.items[0].fajr);
+                //console.log(times.items[0].fajr);
+                //console.log(fajr);
+                callback = function () {
+                    console.log(fajr);
 
-                console.log('tanggal');
-                console.log(d);
+                    cordova.plugins.notification.local.schedule({
+                        id: 1,
+                        title: "satu repeat",
+                        text: "local notification test 1" + d,
+                        every: "minutes",
+                        sound: "file://sounds.mp3",
+                        icon: "http://image.flaticon.com/teams/1-freepik.jpg",
+                        data: { meetingId:"123#fg8" }
+                    }, callback);
+                };
+
+                callback();
             });
-
-            callback = function () {
-                var d = new Date();
-
-                cordova.plugins.notification.local.schedule({
-                    id: 1,
-                    title: "satu repeat",
-                    text: "local notification test 1" + d,
-                    every: "minutes",
-                    sound: "file://sounds.mp3",
-                    icon: "http://image.flaticon.com/teams/1-freepik.jpg",
-                    data: { meetingId:"123#fg8" }
-                }, callback);
-            };
-
-            callback();
 
             cordova.plugins.notification.local.on("click", function (notification) {
                 joinMeeting(notification.data.meetingId);
