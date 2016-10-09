@@ -244,7 +244,7 @@
             {
                 var now = new Date().getTime();
                 var m = new Date();
-                var m = setDateTime(m, '01:15 am').getTime();
+                var m = setDateTime(m, fajr).getTime();
                 var timeDiff = Math.abs(m - now);
                 var waktu = new Date(now + timeDiff);
 
@@ -261,6 +261,28 @@
             };
 
             callback_fajr();
+
+            callback_dhuhr = function ()
+            {
+                var now = new Date().getTime();
+                var m = new Date();
+                var m = setDateTime(m, dhuhr).getTime();
+                var timeDiff = Math.abs(m - now);
+                var waktu = new Date(now + timeDiff);
+
+                cordova.plugins.notification.local.schedule({
+                    id: 2,
+                    title: "Waktunya sholat dhuhur",
+                    text: waktu,
+                    at: waktu,
+                    every: "day",
+                    sound: "file://mecca_56_22.mp3",
+                    icon: "file://icon.png",
+                    data: { meetingId:"123#fg8" }
+                }, callback_dhuhr);
+            };
+
+            callback_dhuhr();
 
             $.getJSON('http://muslimsalat.com/daily.json?key=54b4773caae224e8d38cebd5a737ec37&jsoncallback=?', function (times)
             {
