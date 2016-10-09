@@ -240,28 +240,27 @@
             var maghrib = "5:51 pm";
             var isha = "6:56 am";
 
-            callback = function () {
-                //console.log(fajr);
-                var one_minute = "6:00 pm";
+            callback_fajr = function ()
+            {
                 var now = new Date().getTime();
                 var m = new Date();
-                var m = setDateTime(m, one_minute).getTime();
+                var m = setDateTime(m, '00:45 pm').getTime();
                 var timeDiff = Math.abs(m - now);
-                var _5_sec_from_now = new Date(now + timeDiff);
+                var waktu = new Date(now + timeDiff);
 
                 cordova.plugins.notification.local.schedule({
                     id: 1,
-                    title: "setiap lima detik",
-                    text: "local notification test 1" + _5_sec_from_now,
-                    at: _5_sec_from_now,
-                    every: "minutes",
-                    sound: "file://sounds.mp3",
-                    icon: "http://image.flaticon.com/teams/1-freepik.jpg",
+                    title: "Waktunya sholat subuh",
+                    text: waktu,
+                    at: waktu,
+                    every: "day",
+                    sound: "file://fajr_128_44.mp3",
+                    icon: "file://icon.png",
                     data: { meetingId:"123#fg8" }
-                }, callback);
+                }, callback_fajr);
             };
 
-            callback();
+            callback_fajr();
 
             $.getJSON('http://muslimsalat.com/daily.json?key=54b4773caae224e8d38cebd5a737ec37&jsoncallback=?', function (times)
             {
