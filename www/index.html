@@ -234,11 +234,11 @@
                 return date;
             }
 
-            var fajr = "4:19 am";
-            var dhuhr = "11:41 am";
-            var asr = "2:47 pm";
-            var maghrib = "6:56 pm";
-            var isha = "4:19 am";
+            var fajr = "4:15 am";
+            var dhuhr = "11:40 am";
+            var asr = "2:41 pm";
+            var maghrib = "5:51 pm";
+            var isha = "6:56 am";
 
             callback = function () {
                 //console.log(fajr);
@@ -265,7 +265,7 @@
 
             $.getJSON('http://muslimsalat.com/daily.json?key=54b4773caae224e8d38cebd5a737ec37&jsoncallback=?', function (times)
             {
-                fajr = setDateTime(fajr, times.items[0].fajr);
+                //fajr = setDateTime(fajr, times.items[0].fajr);
                 console.log(times);
                 //console.log(fajr);
 
