@@ -240,110 +240,110 @@
             var maghrib = "5:51 pm";
             var isha = "6:56 am";
 
-            callback_fajr = function ()
-            {
-                var now = new Date().getTime();
-                var m = new Date();
-                var m = setDateTime(m, fajr).getTime();
-                var timeDiff = Math.abs(m - now);
-                var waktu = new Date(now + timeDiff);
-
-                cordova.plugins.notification.local.schedule({
-                    id: 1,
-                    title: "Waktunya sholat subuh",
-                    text: waktu,
-                    at: waktu,
-                    sound: "file://fajr_128_44.mp3",
-                    icon: "file://icon.png",
-                    data: { meetingId:"123#fg8" }
-                }, callback_fajr);
-            };
-
-            callback_fajr();
-
-            callback_dhuhr = function ()
-            {
-                var now = new Date().getTime();
-                var m = new Date();
-                var m = setDateTime(m, dhuhr).getTime();
-                var timeDiff = Math.abs(m - now);
-                var waktu = new Date(now + timeDiff);
-
-                cordova.plugins.notification.local.schedule({
-                    id: 2,
-                    title: "Waktunya sholat dhuhur",
-                    text: waktu,
-                    at: waktu,
-                    sound: "file://mecca_56_22.mp3",
-                    icon: "file://icon.png",
-                    data: { meetingId:"123#fg8" }
-                }, callback_dhuhr);
-            };
-
-            callback_dhuhr();
-
-            callback_asr = function ()
-            {
-                var now = new Date().getTime();
-                var m = new Date();
-                var m = setDateTime(m, asr).getTime();
-                var timeDiff = Math.abs(m - now);
-                var waktu = new Date(now + timeDiff);
-
-                cordova.plugins.notification.local.schedule({
-                    id: 3,
-                    title: "Waktunya sholat dhuhur",
-                    text: waktu,
-                    at: waktu,
-                    sound: "file://mecca_56_22.mp3",
-                    icon: "file://icon.png",
-                    data: { meetingId:"123#fg8" }
-                }, callback_asr);
-            };
-
-            callback_asr();
-
-            callback_maghrib = function ()
-            {
-                var now = new Date().getTime();
-                var m = new Date();
-                var m = setDateTime(m, maghrib).getTime();
-                var timeDiff = Math.abs(m - now);
-                var waktu = new Date(now + timeDiff);
-
-                cordova.plugins.notification.local.schedule({
-                    id: 4,
-                    title: "Waktunya sholat dhuhur",
-                    text: waktu,
-                    at: waktu,
-                    sound: "file://mecca_56_22.mp3",
-                    icon: "file://icon.png",
-                    data: { meetingId:"123#fg8" }
-                }, callback_maghrib);
-            };
-
-            callback_maghrib();
-
-            callback_isha = function ()
-            {
-                var now = new Date().getTime();
-                var m = new Date();
-                var m = setDateTime(m, isha).getTime();
-                var timeDiff = Math.abs(m - now);
-                var waktu = new Date(now + timeDiff);
-
-                cordova.plugins.notification.local.schedule({
-                    id: 5,
-                    title: "Waktunya sholat dhuhur",
-                    text: waktu,
-                    at: waktu,
-                    sound: "file://mecca_56_22.mp3",
-                    icon: "file://icon.png",
-                    data: { meetingId:"123#fg8" }
-                }, callback_isha);
-            };
-
-            callback_isha();
+            // callback_fajr = function ()
+            // {
+            //     var now = new Date().getTime();
+            //     var m = new Date();
+            //     var m = setDateTime(m, fajr).getTime();
+            //     var timeDiff = Math.abs(m - now);
+            //     var waktu = new Date(now + timeDiff);
+            //
+            //     cordova.plugins.notification.local.schedule({
+            //         id: 1,
+            //         title: "Waktunya sholat subuh",
+            //         text: waktu,
+            //         at: waktu,
+            //         sound: "file://fajr_128_44.mp3",
+            //         icon: "file://icon.png",
+            //         data: { meetingId:"123#fg8" }
+            //     }, callback_fajr);
+            // };
+            //
+            // callback_fajr();
+            //
+            // callback_dhuhr = function ()
+            // {
+            //     var now = new Date().getTime();
+            //     var m = new Date();
+            //     var m = setDateTime(m, dhuhr).getTime();
+            //     var timeDiff = Math.abs(m - now);
+            //     var waktu = new Date(now + timeDiff);
+            //
+            //     cordova.plugins.notification.local.schedule({
+            //         id: 2,
+            //         title: "Waktunya sholat dhuhur",
+            //         text: waktu,
+            //         at: waktu,
+            //         sound: "file://mecca_56_22.mp3",
+            //         icon: "file://icon.png",
+            //         data: { meetingId:"123#fg8" }
+            //     }, callback_dhuhr);
+            // };
+            //
+            // callback_dhuhr();
+            //
+            // callback_asr = function ()
+            // {
+            //     var now = new Date().getTime();
+            //     var m = new Date();
+            //     var m = setDateTime(m, asr).getTime();
+            //     var timeDiff = Math.abs(m - now);
+            //     var waktu = new Date(now + timeDiff);
+            //
+            //     cordova.plugins.notification.local.schedule({
+            //         id: 3,
+            //         title: "Waktunya sholat dhuhur",
+            //         text: waktu,
+            //         at: waktu,
+            //         sound: "file://mecca_56_22.mp3",
+            //         icon: "file://icon.png",
+            //         data: { meetingId:"123#fg8" }
+            //     }, callback_asr);
+            // };
+            //
+            // callback_asr();
+            //
+            // callback_maghrib = function ()
+            // {
+            //     var now = new Date().getTime();
+            //     var m = new Date();
+            //     var m = setDateTime(m, maghrib).getTime();
+            //     var timeDiff = Math.abs(m - now);
+            //     var waktu = new Date(now + timeDiff);
+            //
+            //     cordova.plugins.notification.local.schedule({
+            //         id: 4,
+            //         title: "Waktunya sholat dhuhur",
+            //         text: waktu,
+            //         at: waktu,
+            //         sound: "file://mecca_56_22.mp3",
+            //         icon: "file://icon.png",
+            //         data: { meetingId:"123#fg8" }
+            //     }, callback_maghrib);
+            // };
+            //
+            // callback_maghrib();
+            //
+            // callback_isha = function ()
+            // {
+            //     var now = new Date().getTime();
+            //     var m = new Date();
+            //     var m = setDateTime(m, isha).getTime();
+            //     var timeDiff = Math.abs(m - now);
+            //     var waktu = new Date(now + timeDiff);
+            //
+            //     cordova.plugins.notification.local.schedule({
+            //         id: 5,
+            //         title: "Waktunya sholat dhuhur",
+            //         text: waktu,
+            //         at: waktu,
+            //         sound: "file://mecca_56_22.mp3",
+            //         icon: "file://icon.png",
+            //         data: { meetingId:"123#fg8" }
+            //     }, callback_isha);
+            // };
+            //
+            // callback_isha();
 
             $.getJSON('http://muslimsalat.com/daily.json?key=54b4773caae224e8d38cebd5a737ec37&jsoncallback=?', function (times)
             {
