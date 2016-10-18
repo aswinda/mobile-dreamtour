@@ -1,11 +1,13 @@
-dreamtour.controller('AuthController', ['$scope', '$http','cfpLoadingBar', '$auth', 
-  function AuthController($scope, $http, cfpLoadingBar, $auth) 
+dreamtour.controller('AuthController', ['$scope', '$http','cfpLoadingBar', '$auth',
+  function AuthController($scope, $http, cfpLoadingBar, $auth)
 {
     $scope.data = {};
     $scope.currentUser = {};
     $scope.user_id = localStorage.getItem('user');
     $scope.gcm_id = localStorage.getItem('gcm_id');
     $scope.skiped = false;
+
+    $scope.message = '';
 
     // Get gcm_id on first load
     if($scope.gcm_id == null || $scope.gcm_id =="")
@@ -15,7 +17,7 @@ dreamtour.controller('AuthController', ['$scope', '$http','cfpLoadingBar', '$aut
         localStorage.setItem('gcm_id', gcm);
     }
 
-    $scope.login = function() 
+    $scope.login = function()
     {
         var credentials = {
             email: $scope.data.email,
@@ -41,15 +43,18 @@ dreamtour.controller('AuthController', ['$scope', '$http','cfpLoadingBar', '$aut
             var user1 = localStorage.getItem('user');
             console.log(user1);
 
+            $scope.user_id = localStorage.getItem('user');
+
         }, function(error) {
             console.log(error);
+            $scope.message = 'Username atau password salah!';
         });
 
-        $scope.user_id = localStorage.getItem('user');
-        $scope.skiped = true;
+
+        //$scope.skiped = true;
     }
 
-    $scope.skip = function() 
+    $scope.skip = function()
     {
         $scope.skiped = true;
     }
