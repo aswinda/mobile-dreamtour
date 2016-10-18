@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
     <title>Responsive CSS Chat</title>
-    
-    
-    
+
+
+
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript">
       function getSearchParameters() {
@@ -29,7 +29,7 @@
       console.log(parameter.id);
     </script>
 
-    
+
      <!-- Angular JS -->
     <script src="js/angular.min.js"></script>
     <!-- Angular Route Module -->
@@ -55,20 +55,20 @@
           overflow : auto;
       }
     </style>
-    
+
   </head>
 
   <body ng-app="dreamtour" ng-controller="MessageController">
 
     <div class="menu">
-            <div class="back"><a href="chatroom.html"><i class="fa fa-chevron-left"></i></a> </div>
+            <div class="back"><a href="index.html"><i class="fa fa-chevron-left"></i></a> </div>
             <div class="name">Customer Service</div>
         </div>
 
     <div  id="chatBox" schroll-bottom="chats">
       <ol class="chat">
       <!-- <li class="self">
-          
+
         <div class="msg" >
           <user>{{ user_id }}</user>
           <p>{{ cs_group_id }}</p>
@@ -78,7 +78,7 @@
       <!-- <input type="text" ng-model="cs_group_id">
       <input type="text" ng-model="gcm_id"> -->
       <li ng-repeat="chat in chats" ng-class="{self: chat.user== 'USER', other: chat.user == 'ADMIN'}">
-          
+
         <div class="msg" >
           <user>{{ chat.name }}</user>
           <p>{{ chat.message }}</p>
@@ -86,7 +86,7 @@
         </div>
       </li>
 
-        
+
       </ol>
     </div>
     <div class="write">
@@ -97,8 +97,8 @@
     <a class="submit" value="send">send</a>
     <input class="textarea" type="text" placeholder="Type here!"/>
     </div> -->
-    
-    
+
+
   <script type="text/javascript">
     // var objDiv = document.getElementById("divChat");
     // objDiv.scrollTop = objDiv.scrollHeight;
@@ -111,6 +111,6 @@
 
     // jumpToPageBottom();
   </script>
-    
+
   </body>
 </html>
