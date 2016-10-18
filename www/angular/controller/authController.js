@@ -8,6 +8,7 @@ dreamtour.controller('AuthController', ['$scope', '$http','cfpLoadingBar', '$aut
     $scope.skiped = false;
 
     $scope.message = '';
+    $scope.waited = false;
 
     // Get gcm_id on first load
     if($scope.gcm_id == null || $scope.gcm_id =="")
@@ -19,6 +20,9 @@ dreamtour.controller('AuthController', ['$scope', '$http','cfpLoadingBar', '$aut
 
     $scope.login = function()
     {
+        $scope.waited = true;
+        $scope.message = '';
+
         var credentials = {
             email: $scope.data.email,
             password: $scope.data.password
@@ -43,11 +47,13 @@ dreamtour.controller('AuthController', ['$scope', '$http','cfpLoadingBar', '$aut
             var user1 = localStorage.getItem('user');
             console.log(user1);
 
+            $scope.waited = false;
             $scope.user_id = localStorage.getItem('user');
 
         }, function(error) {
             console.log(error);
             $scope.message = 'Username atau password salah!';
+            $scope.waited = false;
         });
 
 
