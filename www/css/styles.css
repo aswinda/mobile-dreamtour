@@ -199,8 +199,9 @@ footer {
 
 .back-button
 {
-    position: absolute; top: 2%;    
-    right: 3%; 
+    position: absolute;
+    top: 5%;    
+    right: 3%;
     color: white;
     background: rgba(255,255,255,0.5);
     border-radius: 50%;
@@ -213,7 +214,7 @@ footer {
 {
     position: absolute;
     top: 13px;
-    left: 13px; 
+    left: 13px;
     z-index: 99;
 }
 
@@ -224,7 +225,7 @@ footer {
 
 .logo-box
 {
-  margin-top: 55px; 
-  margin-bottom: 25px; 
+  margin-top: 55px;
+  margin-bottom: 25px;
   width: 100%;
 }
