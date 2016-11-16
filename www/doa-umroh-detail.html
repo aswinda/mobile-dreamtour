@@ -68,7 +68,7 @@
 
 <body ng-app="dreamtour" ng-controller="DoaUmrohController">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        
+
         <div class="menu-bar-2">
             <a href="doa-umroh.html">
                 <img class="back-button-menu" src="img/back_button.png">
@@ -78,11 +78,11 @@
             </a>
             <img class="logo-dreamtour-menu" src="img/LOGO_DREAM.png">
         </div>
-        <main class="mdl-layout__content">
+        <main class="mdl-layout__content main-padding-2">
 
-            <div class="logo-box">
+            <!-- <div class="logo-box">
                 <img class="logo-dreamtour" src="img/dream.png">
-            </div>
+            </div> -->
             <div style="text-align : center; color: white; margin-bottom: 5%;">{{ doas[doa].name }}</div>
             <div class="mdl-grid portfolio-max-width doa" ng-repeat="image in doas[doa].images">
                <img src="img/{{ image }}" style="width: 100%; height: 100%;"">

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
     <title>Responsive CSS Chat</title>
-    
-    
-    
+
+
+
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript">
       function getSearchParameters() {
@@ -29,7 +29,7 @@
       console.log(parameter.id);
     </script>
 
-    
+
      <!-- Angular JS -->
     <script src="js/angular.min.js"></script>
     <!-- Angular Route Module -->
@@ -55,19 +55,19 @@
           overflow : auto;
       }
     </style>
-    
+
   </head>
 
   <body ng-app="dreamtour" ng-controller="ChatController">
 
     <div class="menu">
             <div class="back"><a href="chatroom.html"><i class="fa fa-chevron-left"></i></a> <img src="img/umrah-plus.jpg" draggable="false"/></div>
-            <div class="name">Umroh Desember 2016</div>
+            <div class="name">Umroh</div>
         </div>
     <div  id="chatBox" schroll-bottom="chats">
     <ol class="chat">
     <li class="" ng-repeat="chat in chats" ng-class="{self: chat.user_id==user_id, other: chat.user_id != user_id}">
-        
+
       <div class="msg" >
       	<user>{{ chat.name }}</user>
         <p>{{ chat.message }}</p>
@@ -75,7 +75,7 @@
       </div>
     </li>
 
-      
+
     </ol>
     </div>
     <div class="write">
@@ -86,8 +86,8 @@
     <a class="submit" value="send">send</a>
     <input class="textarea" type="text" placeholder="Type here!"/>
     </div> -->
-    
-    
+
+
   <script type="text/javascript">
     // var objDiv = document.getElementById("divChat");
     // objDiv.scrollTop = objDiv.scrollHeight;
@@ -100,6 +100,6 @@
 
     // jumpToPageBottom();
   </script>
-    
+
   </body>
 </html>
