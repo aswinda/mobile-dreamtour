@@ -56,14 +56,21 @@
             color: rgb(39, 30, 125);
         }
     </style>
-   
+
 </head>
 
 
 <body ng-app="dreamtour" ng-controller="ExclusivePackagesController">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <a ng-click="prevPage()" class="back-button"><i class="back-button-i fa fa-1x fa-chevron-left"></i></a>
-        
+        <div class="menu-bar-2">
+            <a ng-click="prevPage()">
+                <img class="back-button-menu" src="img/back_button.png">
+                <p class="label-menu">
+                    Home
+                </p>
+            </a>
+            <img class="logo-dreamtour-menu" src="img/LOGO_DREAM.png">
+        </div>
         <!--  <main class="mdl-layout__content" ng-include="'list-regular.html'"></main> -->
         <main class="mdl-layout__content">
             <div class="logo-box">
@@ -71,7 +78,7 @@
             </div>
             <div ng-include="state + '.html'"></div>
 
-            
+
         </main>
 
     </div>

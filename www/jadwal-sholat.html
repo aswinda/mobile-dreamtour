@@ -17,7 +17,15 @@
 
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" style="-webkit-transform: translateZ(0);">
-        <a href="index.html" class="back-button"><i class="back-button-i fa fa-1x fa-chevron-left"></i></a>
+        <div class="menu-bar-2">
+            <a href="index.html">
+                <img class="back-button-menu" src="img/back_button.png">
+                <p class="label-menu">
+                    Home
+                </p>
+            </a>
+            <img class="logo-dreamtour-menu" src="img/LOGO_DREAM.png">
+        </div>
         <main class="mdl-layout__content">
             <div class="mdl-grid">
                 <div class="logo-box">
@@ -296,7 +304,7 @@
                   </p>
                 </div>
                 </div> -->
-            </div> 
+            </div>
         </main>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
@@ -308,7 +316,7 @@
         //console.log('masuk');
          $.getJSON('http://muslimsalat.com/daily.json?key=54b4773caae224e8d38cebd5a737ec37&jsoncallback=?', function (times)
          {
-         
+
             $('.subuh')
              .text(times.items[0].fajr);
             $('.dhuhur')
@@ -319,7 +327,7 @@
              .text(times.items[0].maghrib);
              $('.isya')
              .text(times.items[0].isha);
-            
+
 
         //console.log(times);
         });
@@ -337,7 +345,7 @@
                  .text(times.items[0].maghrib);
                  $('.isya')
                  .text(times.items[0].isha);
-                
+
 
             //console.log(times);
             });
@@ -346,7 +354,7 @@
          $('.dateNow')
             .append(moment().format("DD MMMM YYYY"));
       });
-      
+
     </script>
 
     <!-- Image card -->
@@ -371,5 +379,3 @@
 </body>
 
 </html>
-
-
