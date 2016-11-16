@@ -200,7 +200,7 @@ footer {
 .back-button
 {
     position: absolute;
-    top: 5%;    
+    top: 5%;
     right: 3%;
     color: white;
     background: rgba(255,255,255,0.5);
@@ -221,6 +221,26 @@ footer {
 .logo-dreamtour
 {
   width: 100%;
+}
+
+.logo-dreamtour1
+{
+    width: 100%;
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 10%;
+}
+
+.menu-bar-2
+{
+    background-color: rgb(31, 47, 98);
+    height: 85px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    box-shadow: 0 10px 5px rgba(56, 52, 52, 0.58);
 }
 
 .logo-box
