@@ -1,8 +1,8 @@
-dreamtour.controller('FeedbackController', ['$scope', '$http','cfpLoadingBar', 
-  function FeedbackController($scope, $http, cfpLoadingBar) 
+dreamtour.controller('FeedbackController', ['$scope', '$http','cfpLoadingBar',
+  function FeedbackController($scope, $http, cfpLoadingBar)
 {
     $scope.data = {};
-    $scope.submited = 'false';
+    $scope.submited = false;
 
     $scope.submit = function(feedback)
     {
@@ -16,7 +16,7 @@ dreamtour.controller('FeedbackController', ['$scope', '$http','cfpLoadingBar',
         })
         .success(function(data)
         {
-            $scope.submited = 'true';
+            $scope.submited = true;
             //alert('Success submit feedback')
             //console.log(data);
         })
