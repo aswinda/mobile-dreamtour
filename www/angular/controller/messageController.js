@@ -1,5 +1,5 @@
-dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$timeout', '$auth', 
-  function MessageController($scope, $http, cfpLoadingBar, $timeout, $auth) 
+dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$timeout', '$auth',
+  function MessageController($scope, $http, cfpLoadingBar, $timeout, $auth)
 {
     $scope.chats = {};
     //$scope.user_id = localStorage.getItem('user');
@@ -38,9 +38,9 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
     // $scope.init = function()
     // {
     //     // Get customer group chat id
-        
+
     // }
-    
+
     // Get Room
     $scope.onTimeout = function()
     {
@@ -60,7 +60,7 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
             console.log(error);
         });
 
-        
+
         // var scroller = document.getElementById("autoscroll");
         // scroller.scrollTop = scroller.scrollHeight;
         // console.log(scroller.scrollTop + ' ' + scroller.scrollHeight);
@@ -80,7 +80,7 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
         {
             //$scope.chats = data;
             $scope.message = '';
-            
+
         })
         .error(function (error)
         {

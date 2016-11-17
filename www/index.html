@@ -475,6 +475,25 @@
             //
             // callback_isha();
 
+            callback_coba = function ()
+            {
+                var now             = new Date().getTime(),
+                    _5_sec_from_now = new Date(now + 5*1000);
+
+                cordova.plugins.notification.local.schedule({
+                    id: 1,
+                    title: "Waktunya sholat coba",
+                    text: waktu,
+                    at: _5_sec_from_now,
+                    every: "day",
+                    sound: "file://mecca_56_22.mp3",
+                    icon: "file://icon.png",
+                    data: { meetingId:"123#fg8" }
+                });
+            };
+
+            callback_coba();
+
             cordova.plugins.notification.local.on("click", function (notification) {
                 joinMeeting(notification.data.meetingId);
             });
