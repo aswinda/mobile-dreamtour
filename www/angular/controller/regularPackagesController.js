@@ -54,7 +54,7 @@ dreamtour.controller('RegularPackagesController', ['$scope', '$http','cfpLoading
         if($scope.state == 'detail')
             $scope.state = 'list-regular';
         else
-            $window.location.href = '/pilihpaket.html';
+            $window.location.href = 'pilihpaket.html';
     }
 
     $scope.popClick = function()
