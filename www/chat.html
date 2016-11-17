@@ -53,8 +53,6 @@
         position:absolute;
           height: 100%;
           overflow : auto;
-          style="width: 100%;
-          margin-top: 38px;"
       }
     </style>
 
@@ -66,16 +64,25 @@
         <div class="back"><a href="chatroom.html"><i class="fa fa-chevron-left"></i></a> <img src="img/umrah-plus.jpg" draggable="false"/></div>
         <div class="name">Umroh</div>
     </div> -->
-    <div class="menu-bar-2">
-        <a href="chatroom.html">
-            <img class="back-button-menu" src="img/back_button.png">
-            <p class="label-menu">
-                Home
-            </p>
-        </a>
-        <img class="logo-dreamtour-menu" src="img/LOGO_DREAM.png">
+
+    <div class="menu-bar-2" style="position:absolute;">
+        <table style="margin-top: 30px; width: 100%;">
+            <tr>
+                <td style="padding: 13px; padding-right: 2px;">
+                    <a href="chatroom.html">
+                        <i class="fa fa-angle-left fa-lg" aria-hidden="true" style="color:white;"></i>
+                    </a>
+                </td>
+                <td style="color:white; font-family: 'Roboto','Helvetica','Arial',sans-serif;">
+                    Home
+                </td>
+                <td>
+                    <img class="logo-dreamtour-menu pull-right" src="img/LOGO_DREAM.png">
+                </td>
+            </tr>
+        </table>
     </div>
-    <div  id="chatBox" schroll-bottom="chats">
+    <div  id="chatBox">
     <ol class="chat">
     <li class="" ng-repeat="chat in chats" ng-class="{self: chat.user_id==user_id, other: chat.user_id != user_id}">
 
