@@ -7,6 +7,8 @@ dreamtour.controller('RegularPackagesController', ['$scope', '$http','cfpLoading
     $scope.pop = false;
 
     $scope.pop_style = {'bottom': '0'};
+
+    $scope.perjalanan = {};
     // Get Packages
     $http(
     {
@@ -28,7 +30,23 @@ dreamtour.controller('RegularPackagesController', ['$scope', '$http','cfpLoading
         $scope.package = $scope.packages[index];
         $scope.state = 'detail';
 
-        console.log($scope.package);
+        $http(
+        {
+            url     : host +  "getPerjalanan",
+            method  : "GET",
+            params  : { id : $scope.package.id }
+        })
+        .success(function(data)
+        {
+            $scope.perjalanan = data;
+            console.log($scope.perjalanan);
+        })
+        .error(function (error)
+        {
+            console.log(error);
+        });
+
+        //console.log($scope.package);
     }
 
     $scope.prevPage = function()
