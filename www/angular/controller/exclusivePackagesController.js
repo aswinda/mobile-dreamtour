@@ -1,9 +1,12 @@
 dreamtour.controller('ExclusivePackagesController', ['$scope', '$http','cfpLoadingBar', '$window',
-  function ExclusivePackagesController($scope, $http, cfpLoadingBar, $window) 
+  function ExclusivePackagesController($scope, $http, cfpLoadingBar, $window)
 {
     $scope.packages = {};
     $scope.package = {};
     $scope.state = 'list-regular';
+    $scope.pop = false;
+
+    $scope.pop_style = {'bottom': '0'};
     // Get Packages
     $http(
     {
@@ -34,6 +37,11 @@ dreamtour.controller('ExclusivePackagesController', ['$scope', '$http','cfpLoadi
             $scope.state = 'list-regular';
         else
             $window.location.href = '/pilihpaket.html';
+    }
+
+    $scope.popClick = function()
+    {
+        $scope.pop = !$scope.pop;
     }
 
 }]);
