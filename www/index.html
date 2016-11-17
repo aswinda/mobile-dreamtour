@@ -475,6 +475,27 @@
             //
             // callback_isha();
 
+
+            callback_coba2 = function ()
+            {
+                var now = new Date();
+                var m = new Date();
+                var m = setDateTime(m, "4:20 am");
+
+                cordova.plugins.notification.local.schedule({
+                    id: 2,
+                    title: "Waktunya sholat coba2",
+                    text: waktu,
+                    at: m,
+                    every: "day",
+                    sound: "file://mecca_56_22.mp3",
+                    icon: "file://icon.png",
+                    data: { meetingId:"123#fg8" }
+                });
+            };
+
+            callback_coba2();
+
             callback_coba = function ()
             {
                 var now             = new Date().getTime(),
