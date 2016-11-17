@@ -515,12 +515,13 @@
             //
             // callback_coba();
 
-            var now             = new Date().getTime(),
-                _5_sec_from_now = new Date(now + 5*1000);
+            var now = new Date();
+            var m = new Date();
+            var m = setDateTime(m, "4:45 am");
 
             cordova.plugins.notification.local.schedule({
                 text: "Delayed Notification",
-                at: _5_sec_from_now,
+                at: m,
                 led: "FF0000",
                 sound: null
             });
