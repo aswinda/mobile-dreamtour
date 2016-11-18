@@ -596,20 +596,33 @@
             //     sound: null
             // });
 
-            var coba_waktu = "1:10 am";
+            var coba_waktu = "1:25 am";
             var waktu_isha = new Date();
             var waktu_isha = setDateTime(waktu_isha, coba_waktu);
 
             cordova.plugins.notification.local.schedule({
                 id:1,
-                text: "Saatnya sholat isya" + waktu_isha,
+                text: "Saatnya sholat isya 1 " + waktu_isha,
+                at: waktu_isha,
+                every: "day",
+                led: "FF0000",
+                sound: "file://mecca_56_22.mp3"
+            });
+
+            var coba_waktu = "1:26 am";
+            var waktu_isha = new Date();
+            var waktu_isha = setDateTime(waktu_isha, coba_waktu);
+
+            cordova.plugins.notification.local.schedule({
+                id:2,
+                text: "Saatnya sholat isya 2 " + waktu_isha,
                 at: waktu_isha,
                 every: "day",
                 led: "FF0000",
                 sound: null
             });
 
-            var coba_waktu = "1:15 am";
+            var coba_waktu = "1:28 am";
             var waktu_isha = new Date();
             var waktu_isha = setDateTime(waktu_isha, coba_waktu);
             cordova.plugins.notification.local.update({
@@ -619,6 +632,18 @@
                 every: "day",
                 led: "FF0000",
                 sound: null
+            });
+
+            var coba_waktu = "1:28 am";
+            var waktu_isha = new Date();
+            var waktu_isha = setDateTime(waktu_isha, coba_waktu);
+            cordova.plugins.notification.local.update({
+                id:1,
+                text: "Saatnya sholat isya update" + waktu_isha,
+                at: waktu_isha,
+                every: "day",
+                led: "FF0000",
+                sound: "file://mecca_56_22.mp3"
             });
 
             // var now             = new Date().getTime(),
