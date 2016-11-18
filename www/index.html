@@ -250,7 +250,7 @@
             var dhuhr = "11:40 am";
             var asr = "2:41 pm";
             var maghrib = "5:51 pm";
-            var isha = "6:56 am";
+            var isha = "6:56 pm";
 
             // callback_fajr = function ()
             // {
@@ -596,8 +596,9 @@
             //     sound: null
             // });
 
+            var coba_waktu = "7:15 pm";
             var waktu_isha = new Date();
-            var waktu_isha = setDateTime(waktu_isha, isha).getTime();
+            var waktu_isha = setDateTime(waktu_isha, coba_waktu);
 
             cordova.plugins.notification.local.schedule({
                 id:1,
