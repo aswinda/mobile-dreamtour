@@ -596,7 +596,7 @@
             //     sound: null
             // });
 
-            var coba_waktu = "1:35 am";
+            var coba_waktu = "1:44 am";
             var waktu_isha = new Date();
             var waktu_isha = setDateTime(waktu_isha, coba_waktu);
 
@@ -609,7 +609,7 @@
                 sound: "file://mecca_56_22.mp3"
             });
 
-            var coba_waktu = "1:36 am";
+            var coba_waktu = "1:45 am";
             var waktu_isha = new Date();
             var waktu_isha = setDateTime(waktu_isha, coba_waktu);
 
@@ -622,7 +622,7 @@
                 sound: null
             });
 
-            var coba_waktu = "1:37 am";
+            var coba_waktu = "1:46 am";
             var waktu_isha = new Date();
             var waktu_isha = setDateTime(waktu_isha, coba_waktu);
             cordova.plugins.notification.local.update({
@@ -634,7 +634,7 @@
                 sound: null
             });
 
-            var coba_waktu = "1:37 am";
+            var coba_waktu = "1:47 am";
             var waktu_isha = new Date();
             var waktu_isha = setDateTime(waktu_isha, coba_waktu);
 
@@ -645,6 +645,10 @@
                 every: "day",
                 led: "FF0000",
                 sound: "file://mecca_56_22.mp3"
+            });
+
+            cordova.plugins.notification.local.on("update", function(notification) {
+                alert("updated: " + notification.id);
             });
 
             // var now             = new Date().getTime(),
