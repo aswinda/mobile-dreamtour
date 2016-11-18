@@ -584,14 +584,26 @@
             //     joinMeeting(notification.data.meetingId);
             // });
 
-            var now             = new Date().getTime(),
-                _10_sec_from_now = new Date(now + 10*1000);
+            // var now             = new Date().getTime(),
+            //     _10_sec_from_now = new Date(now + 10*1000);
+            //
+            // cordova.plugins.notification.local.schedule({
+            //     id:1,
+            //     text: "10 Detik dari sekarang " + Date(),
+            //     at: _10_sec_from_now,
+            //     every: "minute",
+            //     led: "FF0000",
+            //     sound: null
+            // });
+
+            var waktu_isha = new Date();
+            var waktu_isha = setDateTime(waktu_isha, isha).getTime();
 
             cordova.plugins.notification.local.schedule({
                 id:1,
-                text: "10 Detik dari sekarang " + Date(),
-                at: _10_sec_from_now,
-                every: "minute",
+                text: "Saatnya sholat isya" + waktu_isha,
+                at: waktu_isha,
+                every: "day",
                 led: "FF0000",
                 sound: null
             });
