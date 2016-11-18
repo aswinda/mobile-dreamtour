@@ -515,73 +515,95 @@
             //
             // callback_coba();
 
-            var now = new Date().getTime();
-            var m = new Date();
-            var m = setDateTime(m, fajr).getTime();
+            // var now = new Date().getTime();
+            // var m = new Date();
+            // var m = setDateTime(m, fajr).getTime();
+            //
+            // cordova.plugins.notification.local.schedule({
+            //     id:1,
+            //     text: "Saatnya sholat subuh " + m,
+            //     at: m,
+            //     every: "day",
+            //     led: "FF0000",
+            //     sound: null
+            // });
+            //
+            // var now = new Date().getTime();
+            // var m = new Date();
+            // var m = setDateTime(m, dhuhr).getTime();
+            //
+            // cordova.plugins.notification.local.schedule({
+            //     id:1,
+            //     text: "Saatnya sholat dhuhur " + m,
+            //     at: m,
+            //     every: "day",
+            //     led: "FF0000",
+            //     sound: null
+            // });
+            //
+            // var now = new Date().getTime();
+            // var m = new Date();
+            // var m = setDateTime(m, asr).getTime();
+            //
+            // cordova.plugins.notification.local.schedule({
+            //     id:1,
+            //     text: "Saatnya sholat ashar " + m,
+            //     at: m,
+            //     every: "day",
+            //     led: "FF0000",
+            //     sound: null
+            // });
+            //
+            // var now = new Date().getTime();
+            // var m = new Date();
+            // var m = setDateTime(m, maghrib).getTime();
+            //
+            // cordova.plugins.notification.local.schedule({
+            //     id:1,
+            //     text: "Saatnya sholat magrib " + m,
+            //     at: m,
+            //     every: "day",
+            //     led: "FF0000",
+            //     sound: null
+            // });
+            //
+            // var now = new Date().getTime();
+            // var m = new Date();
+            // var m = setDateTime(m, isha).getTime();
+            //
+            // cordova.plugins.notification.local.schedule({
+            //     id:1,
+            //     text: "Saatnya sholat isha " + m,
+            //     at: m,
+            //     every: "day",
+            //     led: "FF0000",
+            //     sound: null
+            // });
+
+            // cordova.plugins.notification.local.on("click", function (notification) {
+            //     joinMeeting(notification.data.meetingId);
+            // });
+
+            var now             = new Date().getTime(),
+                _10_sec_from_now = new Date(now + 10*1000);
 
             cordova.plugins.notification.local.schedule({
                 id:1,
-                text: "Saatnya sholat subuh " + m,
-                at: m,
-                every: "day",
+                text: "10 Detik dari sekarang",
+                at: _10_sec_from_now,
                 led: "FF0000",
                 sound: null
             });
 
-            var now = new Date().getTime();
-            var m = new Date();
-            var m = setDateTime(m, dhuhr).getTime();
+            var now             = new Date().getTime(),
+                _20_sec_from_now = new Date(now + 20*1000);
 
             cordova.plugins.notification.local.schedule({
-                id:1,
-                text: "Saatnya sholat dhuhur " + m,
-                at: m,
-                every: "day",
+                id:2,
+                text: "20 Detik dari sekarang",
+                at: _20_sec_from_now,
                 led: "FF0000",
                 sound: null
-            });
-
-            var now = new Date().getTime();
-            var m = new Date();
-            var m = setDateTime(m, asr).getTime();
-
-            cordova.plugins.notification.local.schedule({
-                id:1,
-                text: "Saatnya sholat ashar " + m,
-                at: m,
-                every: "day",
-                led: "FF0000",
-                sound: null
-            });
-
-            var now = new Date().getTime();
-            var m = new Date();
-            var m = setDateTime(m, maghrib).getTime();
-
-            cordova.plugins.notification.local.schedule({
-                id:1,
-                text: "Saatnya sholat magrib " + m,
-                at: m,
-                every: "day",
-                led: "FF0000",
-                sound: null
-            });
-
-            var now = new Date().getTime();
-            var m = new Date();
-            var m = setDateTime(m, isha).getTime();
-
-            cordova.plugins.notification.local.schedule({
-                id:1,
-                text: "Saatnya sholat isha " + m,
-                at: m,
-                every: "day",
-                led: "FF0000",
-                sound: null
-            });
-
-            cordova.plugins.notification.local.on("click", function (notification) {
-                joinMeeting(notification.data.meetingId);
             });
         }
     </script>
