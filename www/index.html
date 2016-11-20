@@ -596,7 +596,7 @@
             //     sound: null
             // });
 
-            var coba_waktu = "3:10 am";
+            var coba_waktu = "3:25 am";
             var waktu_isha = new Date();
             var waktu_isha = setDateTime(waktu_isha, coba_waktu);
 
@@ -608,7 +608,7 @@
                 sound: "file://mecca_56_22.mp3"
             });
 
-            var coba_waktu = "3:11 am";
+            var coba_waktu = "3:26 am";
             var waktu_isha = new Date();
             var waktu_isha = setDateTime(waktu_isha, coba_waktu);
 
@@ -620,16 +620,7 @@
                 sound: null
             });
 
-            var coba_waktu = "3:12 am";
-            var waktu_isha = new Date();
-            var waktu_isha = setDateTime(waktu_isha, coba_waktu);
-            cordova.plugins.notification.local.update({
-                id:1,
-                text: "Saatnya sholat isya update 1 " + waktu_isha,
-                led: "FF0000",
-                sound: null
-            });
-
+            
             cordova.plugins.notification.local.on("update", function(notification) {
                 alert("updated: " + notification.id);
             });

@@ -411,6 +411,27 @@
     <script src="js/index.js"></script>
     <script src="js/moment.js"></script>
     <script type="text/javascript">
+        document.addEventListener("deviceready",onDeviceReady,false);
+        function onDeviceReady()
+        {
+            console.log("Device Ready");
+
+            var coba_waktu = "3:26 am";
+            var waktu_isha = new Date();
+            var waktu_isha = setDateTime(waktu_isha, coba_waktu);
+            cordova.plugins.notification.local.update({
+                id:1,
+                text: "Saatnya sholat isya update 1 " + waktu_isha,
+                led: "FF0000",
+                sound: null
+            });
+        }
+    </script>
+    <!-- initialize -->
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+    <script type="text/javascript">
       jQuery(function($) {
           $("#sholat_table").hide();
           $("#schedule").click(function(){
