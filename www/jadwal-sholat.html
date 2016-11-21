@@ -97,7 +97,7 @@
                         </p>
                         <p class="dateNow" style="margin: 0 0 10px;color: #737373;"></p>
                     </div>
-                    <div class="mdl-grid portfolio-copy" style="margin: 0; padding: 0px;">
+                    <div class="mdl-grid" style="margin: 0; padding: 0px;">
                         <table class="table" style="margin: auto; width: 100%;">
                             <tbody>
                             <tr>
@@ -105,7 +105,10 @@
                                     <p class="sholat-table-p">Subuh</p>
                                 </td>
                                 <td><p class="subuh sholat-table-p"></p></td>
-                                <td class="table-volume-icon"><i class="fa fa-volume-off" aria-hidden="true"></i></td>
+                                <td class="table-volume-icon">
+                                    <i id="volume-off-1" class="fa fa-volume-off" aria-hidden="true"></i>
+                                    <i id="volume-on-1" class="fa fa-volume-up" aria-hidden="true"></i>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -115,7 +118,10 @@
                              <tr>
                                 <td style="width: 61%;"><p class="sholat-table-p">Dhuhur</p></td>
                                 <td><p class="dhuhur sholat-table-p"></p></td>
-                                <td class="table-volume-icon"><i class="fa fa-volume-off" aria-hidden="true"></i></td>
+                                <td class="table-volume-icon">
+                                    <i id="volume-off-2" class="fa fa-volume-off" aria-hidden="true"></i>
+                                    <i id="volume-on-2" class="fa fa-volume-up" aria-hidden="true"></i>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -125,7 +131,10 @@
                              <tr>
                                 <td style="width: 61%;"><p class="sholat-table-p">Ashar</p></td>
                                 <td><p class="ashar sholat-table-p"></p></td>
-                                <td class="table-volume-icon"><i class="fa fa-volume-off" aria-hidden="true"></i></td>
+                                <td class="table-volume-icon">
+                                    <i id="volume-off-3" class="fa fa-volume-off" aria-hidden="true"></i>
+                                    <i id="volume-on-3" class="fa fa-volume-up" aria-hidden="true"></i>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -135,7 +144,10 @@
                              <tr>
                                 <td style="width: 61%;"><p class="sholat-table-p">Maghrib</p></td>
                                 <td><p class="maghrib sholat-table-p"></p></td>
-                                <td class="table-volume-icon"><i class="fa fa-volume-off" aria-hidden="true"></i></td>
+                                <td class="table-volume-icon">
+                                    <i id="volume-off-4" class="fa fa-volume-off" aria-hidden="true"></i>
+                                    <i id="volume-on-4" class="fa fa-volume-up" aria-hidden="true"></i>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -145,7 +157,10 @@
                              <tr>
                                 <td style="width: 61%;"><p class="sholat-table-p">Isya</p></td>
                                 <td><p class="isya sholat-table-p"></p></td>
-                                <td class="table-volume-icon"><i class="fa fa-volume-off" aria-hidden="true"></i></td>
+                                <td class="table-volume-icon">
+                                    <i id="volume-off-5" class="fa fa-volume-off" aria-hidden="true"></i>
+                                    <i id="volume-on-5" class="fa fa-volume-up" aria-hidden="true"></i>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -460,6 +475,144 @@
           $("#back_to_prayer").click(function(){
               $("#sholat_table").hide();
               $("#prayer").show();
+          });
+
+          //localStorage.setItem('someSetting', 'off');
+          var volume_on_1 = localStorage.getItem('volume-on-1');
+          var volume_on_2 = localStorage.getItem('volume-on-2');
+          var volume_on_3 = localStorage.getItem('volume-on-3');
+          var volume_on_4 = localStorage.getItem('volume-on-4');
+          var volume_on_5 = localStorage.getItem('volume-on-5');
+
+          if(volume_on_1 == 'on')
+          {
+              $("#volume-off-1").hide();
+              $("#volume-on-1").show();
+          }
+          else
+          {
+              $("#volume-on-1").hide();
+          }
+
+          if(volume_on_2 == 'on')
+          {
+              $("#volume-off-2").hide();
+              $("#volume-on-2").show();
+          }
+          else
+          {
+              $("#volume-on-2").hide();
+          }
+
+          if(volume_on_3 == 'on')
+          {
+              $("#volume-off-3").hide();
+              $("#volume-on-3").show();
+          }
+          else
+          {
+              $("#volume-on-3").hide();
+          }
+
+          if(volume_on_4 == 'on')
+          {
+              $("#volume-off-4").hide();
+              $("#volume-on-4").show();
+          }
+          else
+          {
+              $("#volume-on-4").hide();
+          }
+
+          if(volume_on_5 == 'on')
+          {
+              $("#volume-off-5").hide();
+              $("#volume-on-5").show();
+          }
+          else
+          {
+              $("#volume-on-5").hide();
+          }
+
+
+          $("#volume-off-1").click(function()
+          {
+              localStorage.setItem('volume-on-1', 'on');
+
+              $("#volume-off-1").hide();
+              $("#volume-on-1").show();
+          });
+
+          $("#volume-off-2").click(function()
+          {
+              localStorage.setItem('volume-on-2', 'on');
+
+              $("#volume-off-2").hide();
+              $("#volume-on-2").show();
+          });
+
+          $("#volume-off-3").click(function()
+          {
+              localStorage.setItem('volume-on-3', 'on');
+
+              $("#volume-off-3").hide();
+              $("#volume-on-3").show();
+          });
+
+          $("#volume-off-4").click(function()
+          {
+              localStorage.setItem('volume-on-4', 'on');
+
+              $("#volume-off-4").hide();
+              $("#volume-on-4").show();
+          });
+
+          $("#volume-off-5").click(function()
+          {
+              localStorage.setItem('volume-on-5', 'on');
+
+              $("#volume-off-5").hide();
+              $("#volume-on-5").show();
+          });
+
+          $("#volume-on-1").click(function()
+          {
+              localStorage.setItem('volume-on-1', 'off');
+
+              $("#volume-on-1").hide();
+              $("#volume-off-1").show();
+          });
+
+          $("#volume-on-2").click(function()
+          {
+              localStorage.setItem('volume-on-2', 'off');
+
+              $("#volume-on-2").hide();
+              $("#volume-off-2").show();
+          });
+
+          $("#volume-on-3").click(function()
+          {
+              localStorage.setItem('volume-on-3', 'off');
+
+              $("#volume-on-3").hide();
+              $("#volume-off-3").show();
+          });
+
+          $("#volume-on-4").click(function()
+          {
+              localStorage.setItem('volume-on-4', 'off');
+
+              $("#volume-on-4").hide();
+              $("#volume-off-4").show();
+          });
+
+          $("#volume-on-5").click(function()
+          {
+              localStorage.setItem('volume-on-5', 'off');
+
+              $("#volume-on-5").hide();
+              $("#volume-off-5").show();
           });
 
           function setDateTime(date, time) {
