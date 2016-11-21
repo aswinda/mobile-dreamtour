@@ -450,12 +450,12 @@
                 return date;
             }
 
-            var coba_waktu = "3:42 am";
+            var coba_waktu = "2:11 am";
             var waktu_isha = new Date();
             var waktu_isha = setDateTime(waktu_isha, coba_waktu);
             cordova.plugins.notification.local.update({
                 id:1,
-                text: "Saatnya sholat isya update 1 " + waktu_isha,
+                text: "update 1 " + waktu_isha,
                 led: "FF0000",
                 sound: null
             });
