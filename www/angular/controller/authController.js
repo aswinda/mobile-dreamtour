@@ -5,7 +5,7 @@ dreamtour.controller('AuthController', ['$scope', '$http','cfpLoadingBar', '$aut
     $scope.currentUser = {};
     $scope.user_id = localStorage.getItem('user');
     $scope.gcm_id = localStorage.getItem('gcm_id');
-    $scope.skiped = false;
+    $scope.skiped = true;
 
     $scope.message = '';
     $scope.waited = false;
