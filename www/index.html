@@ -264,19 +264,19 @@
                     // jika waktu lebih dari sekarang baru di schedule
                     if(waktu_isha.getTime() > now.getTime())
                     {
-                        cordova.plugins.notification.local.schedule({
-                            id:1,
-                            text: "Saatnya sholat isya 1 " + waktu_isha,
-                            firstAt: waktu_isha,
-                            led: "FF0000",
-                            icon: "file://icon.png",
-                            sound: "file://mecca_56_22.mp3"
-                        });
+                        // cordova.plugins.notification.local.schedule({
+                        //     id:1,
+                        //     text: "Saatnya sholat isya 1 " + waktu_isha,
+                        //     firstAt: waktu_isha,
+                        //     led: "FF0000",
+                        //     icon: "file://icon.png",
+                        //     sound: "file://mecca_56_22.mp3"
+                        // });
                     }
                 }
                 else
                 {
-                    alert('present');
+                    //alert('present');
                 }
             });
 
