@@ -64,7 +64,7 @@
                 </tr>
             </table>
         </div>
-        <main class="mdl-layout__content main-padding">
+        <main ng-show="!form_login" class="mdl-layout__content main-padding">
             <div class="mdl-grid portfolio-max-width">
                 <!-- <div class="logo-box">
                     <img class="logo-dreamtour" src="img/dream.png">
@@ -80,6 +80,43 @@
                 </ul>
 
 
+            </div>
+
+        </main>
+
+        <main ng-show="form_login" class="mdl-layout__content">
+            <div class="mdl-grid portfolio-max-width portfolio-contact">
+                <div class="logo-box">
+                    <img class="logo-dreamtour" src="img/dream.png">
+                </div>
+                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text" style="text-align : center;">Login</h2>
+                    </div>
+
+                    <div class="mdl-card__supporting-text">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input ng-model="data.email" class="mdl-textfield__input" type="text" id="Email">
+                            <label class="mdl-textfield__label" for="Email">Passport</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input ng-model="data.password" class="mdl-textfield__input" type="password" id="Password">
+                            <label class="mdl-textfield__label" for="Password">Password</label>
+                            <span class="mdl-textfield__error">Password</span>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding-top:0; padding-bottom:0;">
+                            <p style="font-weight: bolder;">
+                                 {{ message }}
+                            </p>
+                            <img src="img/ring.svg" ng-show="waited" style="width:36px; height:36px; margin-left: 42%; padding-bottom:10px; margin-top:-20px;">
+                        </div>
+                        <p>
+                            <button ng-click="login()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  style="text-align : right; background-color: rgb(39, 30, 125);">
+                                Login
+                            </button>
+                        </p>
+                    </div>
+                </div>
             </div>
 
         </main>
