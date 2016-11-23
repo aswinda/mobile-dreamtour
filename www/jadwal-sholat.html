@@ -470,6 +470,27 @@
                 return date;
             }
 
+            function setDateTimeTommorow(date, time) {
+                var index = time.indexOf(":"); // replace with ":" for differently displayed time.
+                var index2 = time.indexOf(" ");
+
+                var hours = time.substring(0, index);
+                var minutes = time.substring(index + 1, index2);
+
+                var mer = time.substring(index2 + 1, time.length);
+                if (mer == "pm"){
+                    hours = parseInt(hours) + 12;
+                }
+
+                date.setDate(date.getDate() + 1);
+
+                date.setHours(hours);
+                date.setMinutes(minutes);
+                date.setSeconds("00");
+
+                return date;
+            }
+
             var coba_waktu = "3:10 am";
             var waktu_isha = new Date();
             var waktu_isha = setDateTime(waktu_isha, coba_waktu);
@@ -653,11 +674,23 @@
 
           function addNotificationSubuh()
           {
-              alert(testWaktu);
+
               var waktu = new Date();
               var waktu = setDateTime(waktu, testWaktu);
 
-              addNotification(waktu);
+              var now = new Date();
+              if(waktu.getTime() > now.getTime())
+              {
+                  alert(waktu);
+                  addNotification(waktu);
+              }
+              else
+              {
+                  var waktu = new Date();
+                  var waktu = setDateTimeTommorow(waktu, testWaktu);
+                  alert(waktu);
+                  addNotification(waktu);
+              }
           };
 
           var notification_on_1 = localStorage.getItem('notification-on-1');
