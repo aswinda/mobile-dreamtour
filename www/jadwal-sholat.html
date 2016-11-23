@@ -777,7 +777,7 @@
           {
               var waktu1 = waktu;
               alert(waktu1);
-               cordova.plugins.notification.local.isPresent(1, function (present) {
+               cordova.plugins.notification.local.isPresent(notification_id, function (present) {
                    if(present)
                    {
 
@@ -791,27 +791,27 @@
                       {
 
                           alert(waktu);
-                          updateNotificationSound(1, sholat, waktu);
+                          updateNotificationSound(notification_id, sholat, waktu);
                       }
                       else
                       {
                           var waktu = getDateTommorow(waktu);
                           alert(waktu);
 
-                          updateNotificationSound(1, sholat, waktu);
+                          updateNotificationSound(notification_id, sholat, waktu);
                       }
 
-                      switchVolumeOn(1);
+                      switchVolumeOn(notification_id);
                   }
                   else
                   {
                        alert('not present');
                        var waktu = waktu1;
                        alert(waktu);
-                      addNotificationSholat(1, sholat, waktu, true);
+                      addNotificationSholat(notification_id, sholat, waktu, true);
 
-                      switchNotificationOn(1);
-                      switchVolumeOn(1);
+                      switchNotificationOn(notification_id);
+                      switchVolumeOn(notification_id);
                   }
             });
           }
@@ -819,7 +819,7 @@
           function removeUpdateNotificationSoundSholat(notification_id, sholat, waktu)
           {
               var waktu1 = waktu;
-              cordova.plugins.notification.local.isPresent(1, function (present) {
+              cordova.plugins.notification.local.isPresent(notification_id, function (present) {
                   if(present)
                   {
                        var waktu = waktu1;
