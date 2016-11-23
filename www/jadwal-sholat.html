@@ -675,12 +675,15 @@
             });
           };
 
-          function updateNotificationSound(notification_id)
+          function updateNotificationSound(notification_id, date)
           {
-              cordova.plugins.notification.local.schedule({
-                  id:notification_id,
-                  sound: "file://mecca_56_22.mp3"
-            });
+                cordova.plugins.notification.local.update({
+                    id:notification_id,
+                    text: "update 1 ",
+                    led: "FF0000",
+                    icon: "file://icon.png",
+                    sound: "file://mecca_56_22.mp3"
+                });
           };
 
           function addNotificationSubuh()
@@ -843,7 +846,7 @@
               $("#notification-off-5").show();
           });
 
-          var testWaktu = "10:35 am";
+          var testWaktu = "10:50 am";
 
           function setDateTime(date, time) {
               var index = time.indexOf(":"); // replace with ":" for differently displayed time.
