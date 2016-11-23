@@ -775,13 +775,13 @@
 
           function updateNotificationSoundSholat(notification_id, sholat, waktu)
           {
-              var waktu = subuh;
+              var waktu1 = subuh;
               alert(waktu);
                cordova.plugins.notification.local.isPresent(1, function (present) {
                    if(present)
                    {
 
-
+                       var waktu = waktu1;
                        alert('present');
                        alert(waktu);
 
