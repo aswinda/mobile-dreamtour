@@ -586,6 +586,9 @@
 
               $("#volume-off-1").hide();
               $("#volume-on-1").show();
+
+              updateNotificationSound(1);
+              alert('update sound 1 ');
           });
 
           $("#volume-off-2").click(function()
@@ -660,15 +663,23 @@
               $("#volume-off-5").show();
           });
 
-          function addNotification(date)
+          function addNotification(notification_id, date)
           {
               cordova.plugins.notification.local.schedule({
-                  id:1,
+                  id:notification_id,
                   text: "Cobain tambah " + date,
                   firstAt: date,
                   led: "FF0000",
                   icon: "file://icon.png",
                   sound: null
+            });
+          };
+
+          function updateNotificationSound(notification_id)
+          {
+              cordova.plugins.notification.local.schedule({
+                  id:notification_id,
+                  sound: "file://mecca_56_22.mp3"
             });
           };
 
@@ -682,14 +693,14 @@
               if(waktu.getTime() > now.getTime())
               {
                   alert(waktu);
-                  addNotification(waktu);
+                  addNotification(1, waktu);
               }
               else
               {
                   var waktu = new Date();
                   var waktu = setDateTimeTommorow(waktu, testWaktu);
                   alert(waktu);
-                  addNotification(waktu);
+                  addNotification(1, waktu);
               }
           };
 
@@ -832,7 +843,7 @@
               $("#notification-off-5").show();
           });
 
-          var testWaktu = "9:05 am";
+          var testWaktu = "10:35 am";
 
           function setDateTime(date, time) {
               var index = time.indexOf(":"); // replace with ":" for differently displayed time.
