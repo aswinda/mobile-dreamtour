@@ -781,21 +781,21 @@
               cordova.plugins.notification.local.isPresent(1, function (present) {
                   if(present)
                   {
-                      var waktu = new Date();
-                      var waktu = setDateTime(waktu, subuh);
+                      var waktu = subuh;
+                      var sholat = 'shubuh';
 
                       var now = new Date();
                       if(waktu.getTime() > now.getTime())
                       {
                           alert(waktu);
-                          updateNotificationSound(1, 'shubuh', waktu);
+                          updateNotificationSound(1, sholat, waktu);
                       }
                       else
                       {
-                          var waktu = new Date();
-                          var waktu = setDateTimeTommorow(waktu, subuh);
+                          var waktu = getDateTommorow(waktu);
                           alert(waktu);
-                          updateNotificationSound(1, 'shubuh', waktu);
+
+                          updateNotificationSound(1, sholat, waktu);
                       }
 
                       switchVolumeOn(1);
@@ -815,21 +815,21 @@
               cordova.plugins.notification.local.isPresent(1, function (present) {
                   if(present)
                   {
-                      var waktu = new Date();
-                      var waktu = setDateTime(waktu, subuh);
+                      var waktu = subuh;
+                      var sholat = 'subuh';
 
                       var now = new Date();
                       if(waktu.getTime() > now.getTime())
                       {
                           alert(waktu);
-                          updateNotificationSoundOff(1, 'shubuh', waktu);
+                          updateNotificationSoundOff(1, sholat, waktu);
                       }
                       else
                       {
-                          var waktu = new Date();
-                          var waktu = setDateTimeTommorow(waktu, subuh);
+                          var waktu = getDateTommorow(waktu);
                           alert(waktu);
-                          updateNotificationSoundOff(1, 'shubuh', waktu);
+                          
+                          updateNotificationSoundOff(1, sholat, waktu);
                       }
 
                       switchVolumeOff(1);
