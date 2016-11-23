@@ -742,13 +742,13 @@
               }
               else
               {
-                  var waktu = new Date();
-                  var waktu = setDateTimeTommorow(waktu, subuh);
+                  var waktu = getDateTommorow(waktu);
                   alert(waktu);
+
                   if(!sound)
-                    addNotification(1, 'shubuh', waktu);
+                    addNotification(1, sholat, waktu);
                   else
-                    addNotificationWithSound(1, 'shubuh', waktu);
+                    addNotificationWithSound(1, sholat, waktu);
               }
           };
 
@@ -1030,7 +1030,6 @@
 
           function getDateTommorow(date) {
               date.setDate(date.getDate() + 1);
-
               return date;
           }
 
