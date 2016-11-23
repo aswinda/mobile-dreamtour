@@ -887,6 +887,25 @@
               return date;
           }
 
+          function setDateTimeAsr(date, time) {
+              var index = time.indexOf(":"); // replace with ":" for differently displayed time.
+              var index2 = time.indexOf(" ");
+
+              var hours = time.substring(0, index);
+              var minutes = time.substring(index + 1, index2);
+
+              var mer = time.substring(index2 + 1, time.length);
+              if (mer == "pm"){
+                  hours = parseInt(hours) + 12;
+              }
+
+              date.setHours(hours + 1);
+              date.setMinutes(minutes);
+              date.setSeconds("00");
+
+              return date;
+          }
+
           function setDateTimeTommorow(date, time) {
               var index = time.indexOf(":"); // replace with ":" for differently displayed time.
               var index2 = time.indexOf(" ");
@@ -910,31 +929,34 @@
         //console.log('masuk');
          $.getJSON('http://muslimsalat.com/daily.json?key=54b4773caae224e8d38cebd5a737ec37&jsoncallback=?', function (times)
          {
+             var waktu = new Date();
+             var subuh = setDateTime(waktu, times.items[0].fajr);
+             var waktu = new Date();
+             var dhuhr = setDateTime(waktu, times.items[0].dhuhr);
+             var waktu = new Date();
+             var asr = setDateTimeAsr(waktu, times.items[0].asr);
+             var waktu = new Date();
+             var maghrib = setDateTime(waktu, times.items[0].maghrib);
+             var waktu = new Date();
+             var isha = setDateTime(waktu, times.items[0].isha);
 
              $('.subuh')
-             .text(times.items[0].fajr);
+             .text(formatAMPM(subuh));
              $('.dhuhur')
-             .text(times.items[0].dhuhr);
+             .text(formatAMPM(dhuhr));
              $('.ashar')
-             .text(times.items[0].asr);
+             .text(formatAMPM(asr));
              $('.maghrib')
-             .text(times.items[0].maghrib);
+             .text(formatAMPM(maghrib));
              $('.isya')
-             .text(times.items[0].isha);
+             .text(formatAMPM(isha));
+
+
 
              $('#place-label')
                 .append(times.city + ' ' +times.state);
 
-            var waktu = new Date();
-            var subuh = setDateTime(waktu, times.items[0].fajr);
-            var waktu = new Date();
-            var dhuhr = setDateTime(waktu, times.items[0].dhuhr);
-            var waktu = new Date();
-            var asr = setDateTime(waktu, times.items[0].asr);
-            var waktu = new Date();
-            var maghrib = setDateTime(waktu, times.items[0].maghrib);
-            var waktu = new Date();
-            var isha = setDateTime(waktu, times.items[0].isha);
+
 
             var now = new Date();
 
