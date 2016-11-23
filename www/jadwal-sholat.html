@@ -775,9 +775,9 @@
 
           function updateNotificationSoundSholat(notification_id, sholat, waktu)
           {
-              cordova.plugins.notification.local.isPresent(notification_id, function (present) {
-                  if(present)
-                  {
+               cordova.plugins.notification.local.isPresent(1, function (present) {
+                   if(present)
+                   {
                       var now = new Date();
                       if(waktu.getTime() > now.getTime())
                       {
@@ -806,7 +806,7 @@
 
           function removeUpdateNotificationSoundSholat(notification_id, sholat, waktu)
           {
-              cordova.plugins.notification.local.isPresent(notification_id, function (present) {
+              cordova.plugins.notification.local.isPresent(1, function (present) {
                   if(present)
                   {
                       var now = new Date();
