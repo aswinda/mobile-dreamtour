@@ -598,34 +598,22 @@
 
           $("#volume-off-2").click(function()
           {
-              localStorage.setItem('volume-on-2', 'on');
-
-              $("#volume-off-2").hide();
-              $("#volume-on-2").show();
+              updateNotificationSoundSholat(2, 'Dhuhr', dhuhr);
           });
 
           $("#volume-off-3").click(function()
           {
-              localStorage.setItem('volume-on-3', 'on');
-
-              $("#volume-off-3").hide();
-              $("#volume-on-3").show();
+              updateNotificationSoundSholat(3, 'Asr', asr);
           });
 
           $("#volume-off-4").click(function()
           {
-              localStorage.setItem('volume-on-4', 'on');
-
-              $("#volume-off-4").hide();
-              $("#volume-on-4").show();
+              updateNotificationSoundSholat(4, 'Maghrib', maghrib);
           });
 
           $("#volume-off-5").click(function()
           {
-              localStorage.setItem('volume-on-5', 'on');
-
-              $("#volume-off-5").hide();
-              $("#volume-on-5").show();
+              updateNotificationSoundSholat(5, 'Isha', isha);
           });
 
           $("#volume-on-1").click(function()
@@ -635,34 +623,22 @@
 
           $("#volume-on-2").click(function()
           {
-              localStorage.setItem('volume-on-2', 'off');
-
-              $("#volume-on-2").hide();
-              $("#volume-off-2").show();
+              removeUpdateNotificationSoundSholat(2, 'Dhuhr', dhuhr);
           });
 
           $("#volume-on-3").click(function()
           {
-              localStorage.setItem('volume-on-3', 'off');
-
-              $("#volume-on-3").hide();
-              $("#volume-off-3").show();
+              removeUpdateNotificationSoundSholat(3, 'Asr', asr);
           });
 
           $("#volume-on-4").click(function()
           {
-              localStorage.setItem('volume-on-4', 'off');
-
-              $("#volume-on-4").hide();
-              $("#volume-off-4").show();
+              removeUpdateNotificationSoundSholat(4, 'Maghrib', maghrib);
           });
 
           $("#volume-on-5").click(function()
           {
-              localStorage.setItem('volume-on-5', 'off');
-
-              $("#volume-on-5").hide();
-              $("#volume-off-5").show();
+              removeUpdateNotificationSoundSholat(5, 'Isha', isha);
           });
 
           function switchVolumeOff(id)
@@ -775,7 +751,7 @@
 
           function updateNotificationSoundSholat(notification_id, sholat, waktu)
           {
-              var waktu1 = waktu;
+               var waktu1 = waktu;
                cordova.plugins.notification.local.isPresent(notification_id, function (present) {
                    if(present)
                    {
@@ -917,6 +893,8 @@
 
               $("#notification-off-2").hide();
               $("#notification-on-2").show();
+
+              addNotificationSholat(2, 'Dhuhr', dhuhr, false);
           });
 
           $("#notification-off-3").click(function()
@@ -925,6 +903,8 @@
 
               $("#notification-off-3").hide();
               $("#notification-on-3").show();
+
+              addNotificationSholat(3, 'Asr', asr, false);
           });
 
           $("#notification-off-4").click(function()
@@ -933,6 +913,8 @@
 
               $("#notification-off-4").hide();
               $("#notification-on-4").show();
+
+              addNotificationSholat(4, 'Maghrib', maghrib, false);
           });
 
           $("#notification-off-5").click(function()
@@ -941,6 +923,8 @@
 
               $("#notification-off-5").hide();
               $("#notification-on-5").show();
+
+              addNotificationSholat(5, 'Isha', isha, false);
           });
 
           $("#notification-on-1").click(function()
@@ -960,6 +944,9 @@
 
               $("#notification-on-2").hide();
               $("#notification-off-2").show();
+
+              switchVolumeOff(2);
+              cancelNotification(2);
           });
 
           $("#notification-on-3").click(function()
@@ -968,6 +955,9 @@
 
               $("#notification-on-3").hide();
               $("#notification-off-3").show();
+
+              switchVolumeOff(3);
+              cancelNotification(3);
           });
 
           $("#notification-on-4").click(function()
@@ -976,6 +966,9 @@
 
               $("#notification-on-4").hide();
               $("#notification-off-4").show();
+
+              switchVolumeOff(4);
+              cancelNotification(4);
           });
 
           $("#notification-on-5").click(function()
@@ -984,6 +977,9 @@
 
               $("#notification-on-5").hide();
               $("#notification-off-5").show();
+
+              switchVolumeOff(5);
+              cancelNotification(5);
           });
 
           function setDateTime(date, time) {
