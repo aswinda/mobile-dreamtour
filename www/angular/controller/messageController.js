@@ -5,6 +5,7 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
     //$scope.user_id = localStorage.getItem('user');
     $scope.user_id = 1;
     $scope.message = '';
+    $scope.init = {};
 
     // $scope.cs_group_id = localStorage.getItem('cs_group_id');
     // $scope.gcm_id = localStorage.getItem('gcm_id');
@@ -53,6 +54,7 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
         .success(function(data)
         {
             $scope.chats = data;
+            $scope.init = 'tambah';
             //console.log('refresh');
         })
         .error(function (error)

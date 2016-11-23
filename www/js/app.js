@@ -4,7 +4,7 @@ dreamtour.config(function(cfpLoadingBarProvider) {
     cfpLoadingBarProvider.includeSpinner = true;
 });
 
-dreamtour.config(function($stateProvider, $urlRouterProvider, $authProvider) 
+dreamtour.config(function($stateProvider, $urlRouterProvider, $authProvider)
 {
     // Satellizer configuration that specifies which API
     // route the JWT should be retrieved from
@@ -25,10 +25,12 @@ dreamtour.directive('schrollBottom', function () {
     },
     link: function (scope, element) {
       scope.$watchCollection('schrollBottom', function (newValue) {
-        if (newValue)
-        {
-          $(element).scrollTop($(element)[0].scrollHeight + 200);
-        }
+          if (newValue)
+          {
+              console.log('new');
+              console.log(newValue);
+              $(element).scrollTop($(element)[0].scrollHeight + 600);
+          }
       });
     }
   }

@@ -82,24 +82,22 @@
             </tr>
         </table>
     </div>
-    <div  id="chatBox">
+    <div id="chatBox" schroll-bottom="init">
     <ol class="chat">
     <li class="" ng-repeat="chat in chats" ng-class="{self: chat.user_id==user_id, other: chat.user_id != user_id}">
-
-      <div class="msg" >
-      	<user>{{ chat.name }}</user>
-        <p>{{ chat.message }}</p>
-        <time>{{ chat.created_at }}</time>
-      </div>
+        <div class="msg" >
+      	     <user>{{ chat.name }}</user>
+             <p>{{ chat.message }}</p>
+             <time>{{ chat.created_at }}</time>
+        </div>
     </li>
-
 
     </ol>
     </div>
     <div class="write">
-                <input type="text" ng-model="message">
-                <a ng-click="push(message)" class="write-link send"></a>
-            </div>
+        <input type="text" ng-model="message">
+        <a ng-click="push(message)" class="write-link send"></a>
+    </div>
 <!--     <div>
     <a class="submit" value="send">send</a>
     <input class="textarea" type="text" placeholder="Type here!"/>
@@ -110,7 +108,7 @@
     // var objDiv = document.getElementById("divChat");
     // objDiv.scrollTop = objDiv.scrollHeight;
 
-    $('#chatBox').scrollTop(1000000);
+    //$('#chatBox').scrollTop(1000000);
     // function jumpToPageBottom() {
     //   $('html, body').scrollTop( $(document).height()-$(window).height());
     //
