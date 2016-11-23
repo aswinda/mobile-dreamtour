@@ -587,7 +587,7 @@
               $("#volume-off-1").hide();
               $("#volume-on-1").show();
 
-              updateNotificationSound(1);
+              updateNotificationSoundSubuh();
               alert('update sound 1 ');
           });
 
@@ -685,6 +685,26 @@
                     sound: "file://mecca_56_22.mp3"
                 });
           };
+
+          function updateNotificationSoundSubuh()
+          {
+              var waktu = new Date();
+              var waktu = setDateTime(waktu, testWaktu);
+
+              var now = new Date();
+              if(waktu.getTime() > now.getTime())
+              {
+                  alert(waktu);
+                  updateNotificationSound(1, waktu);
+              }
+              else
+              {
+                  var waktu = new Date();
+                  var waktu = setDateTimeTommorow(waktu, testWaktu);
+                  alert(waktu);
+                  updateNotificationSound(1, waktu);
+              }
+          }
 
           function addNotificationSubuh()
           {
