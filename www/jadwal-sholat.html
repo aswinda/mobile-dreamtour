@@ -663,6 +663,15 @@
               $("#volume-off-5").show();
           });
 
+          function switchVolumeOff(id)
+          {
+              var string = 'volume-on-' + id;
+              localStorage.setItem(string, 'off');
+
+              $("#volume-on-" + id).hide();
+              $("#volume-off-" + id).show();
+          }
+
           function addNotification(notification_id, date)
           {
               cordova.plugins.notification.local.schedule({
@@ -840,6 +849,7 @@
               $("#notification-on-1").hide();
               $("#notification-off-1").show();
 
+              switchVolumeOff(1);
               cancelNotification(1);
           });
 
