@@ -522,6 +522,17 @@
               $("#prayer").show();
           });
 
+          var waktu = new Date();
+          var subuh = setDateTime(waktu, "4:02 am");
+          var waktu = new Date();
+          var dhuhr = setDateTime(waktu, "11:39 am");
+          var waktu = new Date();
+          var asr = setDateTimeAsr(waktu, "2:01 pm");
+          var waktu = new Date();
+          var maghrib = setDateTime(waktu, "5:58 pm");
+          var waktu = new Date();
+          var isha = setDateTime(waktu, "7:07 pm");
+
           //localStorage.setItem('someSetting', 'off');
           var volume_on_1 = localStorage.getItem('volume-on-1');
           var volume_on_2 = localStorage.getItem('volume-on-2');
@@ -690,11 +701,11 @@
               $("#notification-on-" + id).show();
           }
 
-          function addNotification(notification_id, date)
+          function addNotification(notification_id, sholat, date)
           {
               cordova.plugins.notification.local.schedule({
                   id:notification_id,
-                  text: "Cobain tambah " + date,
+                  text: "Saatnya sholat " + sholat,
                   firstAt: date,
                   led: "FF0000",
                   icon: "file://icon.png",
@@ -702,11 +713,11 @@
             });
           };
 
-          function addNotificationWithSound(notification_id, date)
+          function addNotificationWithSound(notification_id, sholat, date)
           {
               cordova.plugins.notification.local.schedule({
                   id:notification_id,
-                  text: "Cobain tambah " + date,
+                  text: "Saatnya sholat " + sholat,
                   firstAt: date,
                   led: "FF0000",
                   icon: "file://icon.png",
@@ -718,7 +729,7 @@
           {
 
               var waktu = new Date();
-              var waktu = setDateTime(waktu, testWaktu);
+              var waktu = setDateTime(waktu, subuh);
 
               var now = new Date();
               if(waktu.getTime() > now.getTime())
@@ -726,27 +737,27 @@
                   alert(waktu);
 
                   if(!sound)
-                    addNotification(1, waktu);
+                    addNotification(1, 'shubuh', waktu);
                   else
-                    addNotificationWithSound(1, waktu);
+                    addNotificationWithSound(1, 'shubuh', waktu);
               }
               else
               {
                   var waktu = new Date();
-                  var waktu = setDateTimeTommorow(waktu, testWaktu);
+                  var waktu = setDateTimeTommorow(waktu, subuh);
                   alert(waktu);
                   if(!sound)
-                    addNotification(1, waktu);
+                    addNotification(1, 'shubuh', waktu);
                   else
-                    addNotificationWithSound(1, waktu);
+                    addNotificationWithSound(1, 'shubuh', waktu);
               }
           };
 
-          function updateNotificationSound(notification_id, date)
+          function updateNotificationSound(notification_id, sholat, date)
           {
                 cordova.plugins.notification.local.update({
                     id:notification_id,
-                    text: "update sound on ",
+                    text: "Saatnya sholat " + sholat,
                     at: date,
                     led: "FF0000",
                     icon: "file://icon.png",
@@ -754,11 +765,11 @@
                 });
           };
 
-          function updateNotificationSoundOff(notification_id, date)
+          function updateNotificationSoundOff(notification_id, sholat,  date)
           {
                 cordova.plugins.notification.local.update({
                     id:notification_id,
-                    text: "update sound off ",
+                    text: "Saatnya sholat " + sholat,
                     at: date,
                     led: "FF0000",
                     icon: "file://icon.png",
@@ -772,20 +783,20 @@
                   if(present)
                   {
                       var waktu = new Date();
-                      var waktu = setDateTime(waktu, testWaktu);
+                      var waktu = setDateTime(waktu, subuh);
 
                       var now = new Date();
                       if(waktu.getTime() > now.getTime())
                       {
                           alert(waktu);
-                          updateNotificationSound(1, waktu);
+                          updateNotificationSound(1, 'shubuh', waktu);
                       }
                       else
                       {
                           var waktu = new Date();
-                          var waktu = setDateTimeTommorow(waktu, testWaktu);
+                          var waktu = setDateTimeTommorow(waktu, subuh);
                           alert(waktu);
-                          updateNotificationSound(1, waktu);
+                          updateNotificationSound(1, 'shubuh', waktu);
                       }
 
                       switchVolumeOn(1);
@@ -806,20 +817,20 @@
                   if(present)
                   {
                       var waktu = new Date();
-                      var waktu = setDateTime(waktu, testWaktu);
+                      var waktu = setDateTime(waktu, subuh);
 
                       var now = new Date();
                       if(waktu.getTime() > now.getTime())
                       {
                           alert(waktu);
-                          updateNotificationSoundOff(1, waktu);
+                          updateNotificationSoundOff(1, 'shubuh', waktu);
                       }
                       else
                       {
                           var waktu = new Date();
-                          var waktu = setDateTimeTommorow(waktu, testWaktu);
+                          var waktu = setDateTimeTommorow(waktu, subuh);
                           alert(waktu);
-                          updateNotificationSoundOff(1, waktu);
+                          updateNotificationSoundOff(1, 'shubuh', waktu);
                       }
 
                       switchVolumeOff(1);
@@ -834,7 +845,7 @@
           function cancelNotification(id_notification)
           {
                 cordova.plugins.notification.local.cancel(id_notification, function() {
-                    alert("done");
+                    //alert("done");
                 });
           }
 
@@ -980,8 +991,6 @@
               $("#notification-off-5").show();
           });
 
-          var testWaktu = "10:40 pm";
-
           function setDateTime(date, time) {
               var index = time.indexOf(":"); // replace with ":" for differently displayed time.
               var index2 = time.indexOf(" ");
@@ -1044,15 +1053,15 @@
          $.getJSON('http://muslimsalat.com/daily.json?key=54b4773caae224e8d38cebd5a737ec37&jsoncallback=?', function (times)
          {
              var waktu = new Date();
-             var subuh = setDateTime(waktu, times.items[0].fajr);
+             subuh = setDateTime(waktu, times.items[0].fajr);
              var waktu = new Date();
-             var dhuhr = setDateTime(waktu, times.items[0].dhuhr);
+             dhuhr = setDateTime(waktu, times.items[0].dhuhr);
              var waktu = new Date();
-             var asr = setDateTimeAsr(waktu, times.items[0].asr);
+             asr = setDateTimeAsr(waktu, times.items[0].asr);
              var waktu = new Date();
-             var maghrib = setDateTime(waktu, times.items[0].maghrib);
+             maghrib = setDateTime(waktu, times.items[0].maghrib);
              var waktu = new Date();
-             var isha = setDateTime(waktu, times.items[0].isha);
+             isha = setDateTime(waktu, times.items[0].isha);
 
              $('.subuh')
              .text(formatAMPM(subuh));
