@@ -776,20 +776,13 @@
           function updateNotificationSoundSholat(notification_id, sholat, waktu)
           {
               var waktu1 = waktu;
-              alert(waktu1);
                cordova.plugins.notification.local.isPresent(notification_id, function (present) {
                    if(present)
                    {
-
-                       var waktu = waktu1;
-                       alert('present');
-                       alert(waktu);
-
-
+                      var waktu = waktu1;
                       var now = new Date();
                       if(waktu.getTime() > now.getTime())
                       {
-
                           alert(waktu);
                           updateNotificationSound(notification_id, sholat, waktu);
                       }
@@ -805,9 +798,7 @@
                   }
                   else
                   {
-                       alert('not present');
-                       var waktu = waktu1;
-                       alert(waktu);
+                      var waktu = waktu1;
                       addNotificationSholat(notification_id, sholat, waktu, true);
 
                       switchNotificationOn(notification_id);
@@ -822,7 +813,7 @@
               cordova.plugins.notification.local.isPresent(notification_id, function (present) {
                   if(present)
                   {
-                       var waktu = waktu1;
+                      var waktu = waktu1;
                       var now = new Date();
                       if(waktu.getTime() > now.getTime())
                       {
