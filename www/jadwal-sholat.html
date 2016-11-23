@@ -582,13 +582,7 @@
 
           $("#volume-off-1").click(function()
           {
-              localStorage.setItem('volume-on-1', 'on');
-
-              $("#volume-off-1").hide();
-              $("#volume-on-1").show();
-
               updateNotificationSoundSubuh();
-              alert('update sound 1 ');
           });
 
           $("#volume-off-2").click(function()
@@ -672,6 +666,15 @@
               $("#volume-off-" + id).show();
           }
 
+          function switchVolumeOn(id)
+          {
+              var string = 'volume-on-' + id;
+              localStorage.setItem(string, 'on');
+
+              $("#volume-off-" + id).hide();
+              $("#volume-on-" + id).show();
+          }
+
           function addNotification(notification_id, date)
           {
               cordova.plugins.notification.local.schedule({
@@ -683,37 +686,6 @@
                   sound: null
             });
           };
-
-          function updateNotificationSound(notification_id, date)
-          {
-                cordova.plugins.notification.local.update({
-                    id:notification_id,
-                    text: "update 1 ",
-                    led: "FF0000",
-                    icon: "file://icon.png",
-                    sound: "file://mecca_56_22.mp3"
-                });
-          };
-
-          function updateNotificationSoundSubuh()
-          {
-              var waktu = new Date();
-              var waktu = setDateTime(waktu, testWaktu);
-
-              var now = new Date();
-              if(waktu.getTime() > now.getTime())
-              {
-                  alert(waktu);
-                  updateNotificationSound(1, waktu);
-              }
-              else
-              {
-                  var waktu = new Date();
-                  var waktu = setDateTimeTommorow(waktu, testWaktu);
-                  alert(waktu);
-                  updateNotificationSound(1, waktu);
-              }
-          }
 
           function addNotificationSubuh()
           {
@@ -735,6 +707,48 @@
                   addNotification(1, waktu);
               }
           };
+
+          function updateNotificationSound(notification_id, date)
+          {
+                cordova.plugins.notification.local.update({
+                    id:notification_id,
+                    text: "update 1 ",
+                    led: "FF0000",
+                    icon: "file://icon.png",
+                    sound: "file://mecca_56_22.mp3"
+                });
+          };
+
+          function updateNotificationSoundSubuh()
+          {
+              cordova.plugins.notification.local.isPresent(1, function (present) {
+                  if(present)
+                  {
+                      var waktu = new Date();
+                      var waktu = setDateTime(waktu, testWaktu);
+
+                      var now = new Date();
+                      if(waktu.getTime() > now.getTime())
+                      {
+                          alert(waktu);
+                          updateNotificationSound(1, waktu);
+                      }
+                      else
+                      {
+                          var waktu = new Date();
+                          var waktu = setDateTimeTommorow(waktu, testWaktu);
+                          alert(waktu);
+                          updateNotificationSound(1, waktu);
+                      }
+                  }
+                  else
+                  {
+                      addNotificationSubuh();
+
+                      switchVolumeOn(id);
+                  }
+            });
+          }
 
           function cancelNotification(id_notification)
           {
@@ -885,7 +899,7 @@
               $("#notification-off-5").show();
           });
 
-          var testWaktu = "6:20 pm";
+          var testWaktu = "6:55 pm";
 
           function setDateTime(date, time) {
               var index = time.indexOf(":"); // replace with ":" for differently displayed time.
