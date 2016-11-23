@@ -593,7 +593,7 @@
 
           $("#volume-off-1").click(function()
           {
-              updateNotificationSoundSubuh();
+              updateNotificationSoundSholat(1, 'Subuh', subuh);
           });
 
           $("#volume-off-2").click(function()
@@ -630,7 +630,7 @@
 
           $("#volume-on-1").click(function()
           {
-              removeUpdateNotificationSoundSubuh();
+              removeUpdateNotificationSoundSholat(1, 'Subuh', subuh);
           });
 
           $("#volume-on-2").click(function()
@@ -725,20 +725,17 @@
             });
           };
 
-          function addNotificationSubuh(sound)
+          function addNotificationSholat(notification_id, sholat, waktu, sound)
           {
-              var waktu = subuh;
-              var sholat = 'subuh';
-
               var now = new Date();
               if(waktu.getTime() > now.getTime())
               {
                   alert(waktu);
 
                   if(!sound)
-                    addNotification(1, sholat, waktu);
+                    addNotification(notification_id, sholat, waktu);
                   else
-                    addNotificationWithSound(1, sholat, waktu);
+                    addNotificationWithSound(notification_id, sholat, waktu);
               }
               else
               {
@@ -746,9 +743,9 @@
                   alert(waktu);
 
                   if(!sound)
-                    addNotification(1, sholat, waktu);
+                    addNotification(notification_id, sholat, waktu);
                   else
-                    addNotificationWithSound(1, sholat, waktu);
+                    addNotificationWithSound(notification_id, sholat, waktu);
               }
           };
 
@@ -764,7 +761,7 @@
                 });
           };
 
-          function updateNotificationSoundOff(notification_id, sholat,  date)
+          function updateNotificationSoundOff(notification_id, sholat, date)
           {
                 cordova.plugins.notification.local.update({
                     id:notification_id,
@@ -776,67 +773,61 @@
                 });
           };
 
-          function updateNotificationSoundSubuh()
+          function updateNotificationSoundSholat(notification_id, sholat, waktu)
           {
-              cordova.plugins.notification.local.isPresent(1, function (present) {
+              cordova.plugins.notification.local.isPresent(notification_id, function (present) {
                   if(present)
                   {
-                      var waktu = subuh;
-                      var sholat = 'shubuh';
-
                       var now = new Date();
                       if(waktu.getTime() > now.getTime())
                       {
                           alert(waktu);
-                          updateNotificationSound(1, sholat, waktu);
+                          updateNotificationSound(notification_id, sholat, waktu);
                       }
                       else
                       {
                           var waktu = getDateTommorow(waktu);
                           alert(waktu);
 
-                          updateNotificationSound(1, sholat, waktu);
+                          updateNotificationSound(notification_id, sholat, waktu);
                       }
 
-                      switchVolumeOn(1);
+                      switchVolumeOn(notification_id);
                   }
                   else
                   {
-                      addNotificationSubuh(true);
+                      addNotificationSholat(notification_id, sholat, waktu, true);
 
-                      switchNotificationOn(1);
-                      switchVolumeOn(1);
+                      switchNotificationOn(notification_id);
+                      switchVolumeOn(notification_id);
                   }
             });
           }
 
-          function removeUpdateNotificationSoundSubuh()
+          function removeUpdateNotificationSoundSholat(notification_id, sholat, waktu)
           {
-              cordova.plugins.notification.local.isPresent(1, function (present) {
+              cordova.plugins.notification.local.isPresent(notification_id, function (present) {
                   if(present)
                   {
-                      var waktu = subuh;
-                      var sholat = 'subuh';
-
                       var now = new Date();
                       if(waktu.getTime() > now.getTime())
                       {
                           alert(waktu);
-                          updateNotificationSoundOff(1, sholat, waktu);
+                          updateNotificationSoundOff(notification_id, sholat, waktu);
                       }
                       else
                       {
                           var waktu = getDateTommorow(waktu);
                           alert(waktu);
 
-                          updateNotificationSoundOff(1, sholat, waktu);
+                          updateNotificationSoundOff(notification_id, sholat, waktu);
                       }
 
-                      switchVolumeOff(1);
+                      switchVolumeOff(notification_id);
                   }
                   else
                   {
-                      switchVolumeOff(1);
+                      switchVolumeOff(notification_id);
                   }
             });
           }
@@ -912,7 +903,7 @@
               $("#notification-off-1").hide();
               $("#notification-on-1").show();
 
-              addNotificationSubuh(false);
+              addNotificationSholat(1, 'Subuh', subuh, false);
           });
 
           $("#notification-off-2").click(function()
@@ -1057,7 +1048,7 @@
          $.getJSON('http://muslimsalat.com/daily.json?key=54b4773caae224e8d38cebd5a737ec37&jsoncallback=?', function (times)
          {
              var waktu = new Date();
-             subuh = setDateTime(waktu, "00:15 am");
+             subuh = setDateTime(waktu, "4:05 am");
              //subuh = setDateTime(waktu, times.items[0].fajr);
              var waktu = new Date();
              dhuhr = setDateTime(waktu, times.items[0].dhuhr);
