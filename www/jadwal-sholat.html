@@ -727,9 +727,8 @@
 
           function addNotificationSubuh(sound)
           {
-
-              var waktu = new Date();
-              var waktu = setDateTime(waktu, subuh);
+              var waktu = subuh;
+              var sholat = 'subuh';
 
               var now = new Date();
               if(waktu.getTime() > now.getTime())
@@ -737,9 +736,9 @@
                   alert(waktu);
 
                   if(!sound)
-                    addNotification(1, 'shubuh', waktu);
+                    addNotification(1, sholat, waktu);
                   else
-                    addNotificationWithSound(1, 'shubuh', waktu);
+                    addNotificationWithSound(1, sholat, waktu);
               }
               else
               {
@@ -1025,6 +1024,12 @@
               date.setHours(hours + 1);
               date.setMinutes(minutes);
               date.setSeconds("00");
+
+              return date;
+          }
+
+          function getDateTommorow(date) {
+              date.setDate(date.getDate() + 1);
 
               return date;
           }
