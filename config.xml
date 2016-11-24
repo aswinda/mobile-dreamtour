@@ -30,6 +30,7 @@
         <variable name="SENDER_ID" value="202371380195" />
     </plugin>
     <plugin name="de.appplant.cordova.plugin.local-notification" spec="0.8.4" />
+    <icon src="icon.png" />
     <!--
     <icon src="icon.png" /> -->
     <!-- Define app icon for each platform. -->
