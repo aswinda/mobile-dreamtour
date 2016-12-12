@@ -12,7 +12,7 @@ dreamtour.controller('RegularPackagesController', ['$scope', '$http','cfpLoading
     // Get Packages
     $http(
     {
-        url     : host +  "getRegularPackages",
+        url     : host +  "getExclusivePlusPackages",
         method  : "GET",
     })
     .success(function(data)
