@@ -452,14 +452,36 @@
             console.log("Device Ready");
 
             var onSuccess = function(position) {
-                alert('Latitude: '          + position.coords.latitude          + '\n' +
-                      'Longitude: '         + position.coords.longitude         + '\n' +
-                      'Altitude: '          + position.coords.altitude          + '\n' +
-                      'Accuracy: '          + position.coords.accuracy          + '\n' +
-                      'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-                      'Heading: '           + position.coords.heading           + '\n' +
-                      'Speed: '             + position.coords.speed             + '\n' +
-                      'Timestamp: '         + position.timestamp                + '\n');
+                // alert('Latitude: '          + position.coords.latitude          + '\n' +
+                //       'Longitude: '         + position.coords.longitude         + '\n' +
+                //       'Altitude: '          + position.coords.altitude          + '\n' +
+                //       'Accuracy: '          + position.coords.accuracy          + '\n' +
+                //       'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+                //       'Heading: '           + position.coords.heading           + '\n' +
+                //       'Speed: '             + position.coords.speed             + '\n' +
+                //       'Timestamp: '         + position.timestamp                + '\n');
+
+                var string = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&key=AIzaSyAEdB1O1FIs6_bf0_NfL55PVMW3R6nRGS0";
+
+                      var geocodingAPI = string;
+
+                     $.getJSON(geocodingAPI, function (json) {
+                         if (json.status == "OK") {
+                             //Check result 0
+                             var result = json.results[0];
+                             //look for locality tag and administrative_area_level_1
+                             var city = "";
+                             var state = "";
+                             for (var i = 0, len = result.address_components.length; i < len; i++) {
+                                 var ac = result.address_components[i];
+                                if (ac.types.indexOf("administrative_area_level_1") >= 0) state = ac.short_name;
+                             }
+                             if (state != '') {
+                                 alert("Hello to you out there in " + city + ", " + state + "!");
+                             }
+                         }
+
+                     });
             };
 
             // onError Callback receives a PositionError object
