@@ -1,5 +1,5 @@
 dreamtour.controller('HolidayPackagesController', ['$scope', '$http','cfpLoadingBar', '$window',
-  function RegularPackagesController($scope, $http, cfpLoadingBar, $window)
+  function HolidayPackagesController($scope, $http, cfpLoadingBar, $window)
 {
     $scope.packages = {};
     $scope.package = {};
