@@ -478,9 +478,15 @@
                          }
                          if (state != '') {
                              if(city != "")
-                                alert("Hello to you out there in " + city + ", " + state + "!");
+                             {
+                                 //alert("Hello to you out there in " + city + ", " + state + "!");
+                                 $('#place-label').append(city + ", " + state);
+                             }
                             else
-                                alert("Hello to you out there in " + state + "!");
+                            {
+                                //alert("Hello to you out there in " + state + "!");
+                                $('#place-label').append(state);
+                            }
                          }
                      }
                  });
@@ -1121,8 +1127,8 @@
 
 
 
-             $('#place-label')
-                .append(times.city + ' ' +times.state);
+            //  $('#place-label')
+            //     .append(times.city + ' ' +times.state);
 
 
 
