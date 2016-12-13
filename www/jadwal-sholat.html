@@ -1133,42 +1133,42 @@
                 $('#pray_next')
                    .append('FAJR');
                 $('#pray_time')
-                   .append(times.items[0].fajr.toUpperCase());
+                   .append(formatAMPM(subuh));
             }
             else if(now.getTime() < dhuhr.getTime())
             {
                 $('#pray_next')
                    .append('DHUHR');
                 $('#pray_time')
-                   .append(times.items[0].dhuhr.toUpperCase());
+                   .append(formatAMPM(dhuhr));
             }
             else if(now.getTime() < asr.getTime())
             {
                 $('#pray_next')
                    .append('ASR');
                 $('#pray_time')
-                   .append(times.items[0].asr.toUpperCase());
+                   .append(formatAMPM(asr));
             }
             else if(now.getTime() < maghrib.getTime())
             {
                 $('#pray_next')
                    .append('MAGHRIB');
                 $('#pray_time')
-                   .append(times.items[0].maghrib.toUpperCase());
+                   .append(formatAMPM(maghrib));
             }
             else if(now.getTime() < isha.getTime())
             {
                 $('#pray_next')
                    .append('ISHA');
                 $('#pray_time')
-                   .append(times.items[0].isha.toUpperCase());
+                   .append(formatAMPM(isha));
             }
             else
             {
                 $('#pray_next')
                    .append('FAJR');
                 $('#pray_time')
-                   .append(times.items[0].fajr.toUpperCase());
+                   .append(formatAMPM(subuh));
             }
 
              console.log(times);
