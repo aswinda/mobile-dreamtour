@@ -733,7 +733,7 @@
                   id:notification_id,
                   text: "Saatnya sholat " + sholat,
                   firstAt: date,
-                  every: "minute",
+                  every: "day",
                   led: "FF0000",
                   icon: "file://icon.png",
                   sound: null
@@ -746,7 +746,7 @@
                   id:notification_id,
                   text: "Saatnya sholat " + sholat,
                   firstAt: date,
-                  every: "minute",
+                  every: "day",
                   led: "FF0000",
                   icon: "file://icon.png",
                   sound: "file://mecca_56_22.mp3"
@@ -783,7 +783,7 @@
                     id:notification_id,
                     text: "Saatnya sholat " + sholat,
                     at: date,
-                    every: "minute",
+                    every: "day",
                     led: "FF0000",
                     icon: "file://icon.png",
                     sound: "file://mecca_56_22.mp3"
@@ -796,7 +796,7 @@
                     id:notification_id,
                     text: "Saatnya sholat " + sholat,
                     at: date,
-                    every: "minute",
+                    every: "day",
                     led: "FF0000",
                     icon: "file://icon.png",
                     sound: null
@@ -1103,20 +1103,20 @@
          $.getJSON('http://muslimsalat.com/daily.json?key=54b4773caae224e8d38cebd5a737ec37&jsoncallback=?', function (times)
          {
              var waktu = new Date();
-             subuh = setDateTime(waktu, "3:05 am");
-             //subuh = setDateTime(waktu, times.items[0].fajr);
+             //subuh = setDateTime(waktu, "3:05 am");
+             subuh = setDateTime(waktu, times.items[0].fajr);
              var waktu = new Date();
-             //dhuhr = setDateTime(waktu, times.items[0].dhuhr);
-             dhuhr = setDateTime(waktu, "2:52 am");
+             dhuhr = setDateTime(waktu, times.items[0].dhuhr);
+             //dhuhr = setDateTime(waktu, "2:52 am");
              var waktu = new Date();
-             //asr = setDateTimeAsr(waktu, times.items[0].asr);
-             asr = setDateTimeAsr(waktu, "2:52 am");
+             asr = setDateTimeAsr(waktu, times.items[0].asr);
+             //asr = setDateTimeAsr(waktu, "2:52 am");
              var waktu = new Date();
-             //maghrib = setDateTime(waktu, times.items[0].maghrib);
-             maghrib = setDateTime(waktu, "2:53 am");
+             maghrib = setDateTime(waktu, times.items[0].maghrib);
+             //maghrib = setDateTime(waktu, "2:53 am");
              var waktu = new Date();
-            // isha = setDateTime(waktu, times.items[0].isha);
-             isha = setDateTime(waktu, "2:54 am");
+             isha = setDateTime(waktu, times.items[0].isha);
+             //isha = setDateTime(waktu, "2:54 am");
 
              $('.subuh')
              .text(formatAMPM(subuh));
