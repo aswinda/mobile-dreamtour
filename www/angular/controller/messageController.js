@@ -17,7 +17,7 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
     {
         var arr = new Uint8Array((len || 40) / 2);
         window.crypto.getRandomValues(arr);
-        return Array.from(arr).map($scope.dec2hex).join('');
+        return Array.from(arr).map($scope.dec2hex()).join('');
     }
 
     $scope.cs_id = localStorage.getItem('cs_id');
