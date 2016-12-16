@@ -22,7 +22,7 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
 
     $scope.cs_id = localStorage.getItem('cs_id');
     alert("get cs id " + cs_id);
-    if($scope.cs_id == null || $scope.cs_id == '' || $scope.cs_id == undefined)
+    if($scope.cs_id == null || $scope.cs_id == '' || $scope.cs_id === undefined)
     {
         $scope.cs_id = $scope.generateId(len);
         alert("kalau null " + cs_id);
