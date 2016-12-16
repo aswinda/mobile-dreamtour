@@ -106,7 +106,27 @@
     <icon src="icon-50.png" platform="ios" width="50" height="50" />
     <icon src="icon-50@2x.png" platform="ios" width="100" height="100" />
 
-    <platform name="ios">
+    <!-- iPhone and iPod touch -->
+    <splash src="Default.png" platform="ios" width="320" height="480" />
+    <splash src="Default@2x.png" platform="ios" width="640" height="960" />
+
+    <!-- iPhone 5 / iPod Touch (5th Generation) -->
+    <splash src="Default-568h@2x.png" platform="ios" width="640" height="1136" />
+
+    <!-- iPhone 6 -->
+    <splash src="Default-667h@2x.png" platform="ios" width="750" height="1334" />
+    <splash src="Default-Portrait-736h@3x.png" platform="ios" width="1242" height="2208" />
+    <splash src="Default-Landscape-736h@3x.png" platform="ios" width="2208" height="1242" />
+
+    <!-- iPad -->
+    <splash src="Default-Portrait.png" platform="ios" width="768" height="1024" />
+    <splash src="Default-Landscape.png" platform="ios" width="1024" height="768" />
+
+    <!-- Retina iPad -->
+    <splash src="Default-Portrait@2x.png" platform="ios" width="1536" height="2048" />
+    <splash src="Default-Landscape@2x.png" platform="ios" width="2048" height="1536" />
+
+    <!-- <platform name="ios"> -->
         <!-- iOS 7.0+ -->
         <!-- iPhone / iPod Touch  -->
         <!-- <icon src="res/ios/icon-60.png" width="60" height="60" /> -->
@@ -133,25 +153,25 @@
         <!-- images are determined by width and height. The following are supported -->
 
         <!-- iPhone and iPod touch -->
-        <splash src="Default.png" platform="ios" width="320" height="480" />
-        <splash src="Default@2x.png" platform="ios" width="640" height="960" />
+        <!-- <splash src="Default.png" platform="ios" width="320" height="480" />
+        <splash src="Default@2x.png" platform="ios" width="640" height="960" /> -->
 
         <!-- iPhone 5 / iPod Touch (5th Generation) -->
-        <splash src="Default-568h@2x.png" platform="ios" width="640" height="1136" />
+        <!-- <splash src="Default-568h@2x.png" platform="ios" width="640" height="1136" /> -->
 
         <!-- iPhone 6 -->
-        <splash src="Default-667h@2x.png" platform="ios" width="750" height="1334" />
+        <!-- <splash src="Default-667h@2x.png" platform="ios" width="750" height="1334" />
         <splash src="Default-Portrait-736h@3x.png" platform="ios" width="1242" height="2208" />
-        <splash src="Default-Landscape-736h@3x.png" platform="ios" width="2208" height="1242" />
+        <splash src="Default-Landscape-736h@3x.png" platform="ios" width="2208" height="1242" /> -->
 
         <!-- iPad -->
-        <splash src="Default-Portrait.png" platform="ios" width="768" height="1024" />
-        <splash src="Default-Landscape.png" platform="ios" width="1024" height="768" />
+        <!-- <splash src="Default-Portrait.png" platform="ios" width="768" height="1024" />
+        <splash src="Default-Landscape.png" platform="ios" width="1024" height="768" /> -->
 
         <!-- Retina iPad -->
-        <splash src="Default-Portrait@2x.png" platform="ios" width="1536" height="2048" />
+        <!-- <splash src="Default-Portrait@2x.png" platform="ios" width="1536" height="2048" />
         <splash src="Default-Landscape@2x.png" platform="ios" width="2048" height="1536" />
-    </platform>
+    </platform> -->
     <platform name="wp8">
         <icon height="99" platform="wp8" src="res/icon/wp8/ApplicationIcon.png" width="99" />
         <icon height="159" platform="wp8" src="res/icon/wp8/Background.png" width="159" />
