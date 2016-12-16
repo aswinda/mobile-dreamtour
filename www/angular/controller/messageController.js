@@ -7,36 +7,40 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
     $scope.message = '';
     $scope.init = {};
 
-    function dec2hex (dec) {
-      return dec.toString(16);
+    $scope.dec2hex = function(dec)
+    {
+        return dec.toString(16);
     }
 
     // generateId :: Integer -> String
-    function generateId (len) {
-      var arr = new Uint8Array((len || 40) / 2);
-      window.crypto.getRandomValues(arr);
-      return Array.from(arr).map(dec2hex).join('');
+    $scope.generateId = function(len)
+    {
+        var arr = new Uint8Array((len || 40) / 2);
+        window.crypto.getRandomValues(arr);
+        return Array.from(arr).map($scope.dec2hex).join('');
     }
 
-    $scope.gcm_id = localStorage.getItem('gcm_id');
-    if($scope.gcm_id == null || $scope.gcm_id == '')
+    $scope.cs_id = localStorage.getItem('cs_id');
+    alert("get cs id " + cs_id);
+    if($scope.cs_id == null || $scope.cs_id == '')
     {
-        $scope.gcm_id = generateId(len);
-        var gcm = JSON.stringify($scope.gcm_id);
-        localStorage.setItem('gcm_id', gcm);
+        $scope.cs_id = $scope.generateId(len);
+        alert("kalau null " + cs_id);
+        var cs_id = JSON.stringify($scope.cs_id);
+        localStorage.setItem('cs_id', cs_id);
     }
 
     // $scope.cs_group_id = localStorage.getItem('cs_group_id');
-    // $scope.gcm_id = localStorage.getItem('gcm_id');
+    // $scope.cs_id = localStorage.getItem('cs_id');
 
     $scope.cs_group_id = '';
-    //$scope.gcm_id = 'fJlM_yTiYfA:APA91bGRH6y5srzttHGuexpGty6MXYPBRgk8DZA7nLqxaes-RGellayPiAG1CJwuSKzda3aVIq3rk9IGahuAMxGdsf_3GtGW_h8OQGOzXJelP7H9lr5at_wJbWH7jDwunDsAEKnRrFdH';
+    //$scope.cs_id = 'fJlM_yTiYfA:APA91bGRH6y5srzttHGuexpGty6MXYPBRgk8DZA7nLqxaes-RGellayPiAG1CJwuSKzda3aVIq3rk9IGahuAMxGdsf_3GtGW_h8OQGOzXJelP7H9lr5at_wJbWH7jDwunDsAEKnRrFdH';
 
     if($scope.cs_group_id == null || $scope.cs_group_id == '')
     {
-        var gcm_id = $scope.gcm_id;
+        var gcm_id = $scope.cs_id;
 
-        alert(gcm_id);
+        alert("get cs didalem " + gcm_id);
 
         $http(
         {
