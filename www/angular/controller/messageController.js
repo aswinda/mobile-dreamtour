@@ -9,7 +9,7 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
 
     $scope.randomString = function()
     {
-        var length = 255;
+        var length = 200;
         var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         var result = '';
         for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
@@ -17,13 +17,14 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
     }
 
     $scope.cs_id = localStorage.getItem('cs_id');
-    alert("get cs id " + cs_id);
+    alert("get cs id " + $scope.cs_id);
     if($scope.cs_id == null || $scope.cs_id == '' || $scope.cs_id === undefined)
     {
         alert('generete id');
         $scope.cs_id = $scope.randomString();
-        alert("kalau null " + cs_id);
+        alert("kalau null " + $scope.cs_id);
         var cs_id = JSON.stringify($scope.cs_id);
+        alert("cs id nya " + cs_id);
         localStorage.setItem('cs_id', cs_id);
     }
 
@@ -49,8 +50,12 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
         {
             $scope.cs_group_id = data;
 
+            alert("hasilnya " + data);
+
             var group = JSON.stringify(data);
             localStorage.setItem('cs_group_id', group);
+
+            alert("hasilnya group " + group);
         })
         .error(function (error)
         {
