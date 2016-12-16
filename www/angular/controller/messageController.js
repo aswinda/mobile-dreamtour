@@ -7,17 +7,13 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
     $scope.message = '';
     $scope.init = {};
 
-    $scope.dec2hex = function(dec)
+    $scope.randomString = function()
     {
-        return dec.toString(16);
-    }
-
-    // generateId :: Integer -> String
-    $scope.generateId = function(len)
-    {
-        var arr = new Uint8Array((len || 40) / 2);
-        window.crypto.getRandomValues(arr);
-        return Array.from(arr).map($scope.dec2hex()).join('');
+        var length = 255;
+        var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var result = '';
+        for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+        return result;
     }
 
     $scope.cs_id = localStorage.getItem('cs_id');
@@ -25,7 +21,7 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
     if($scope.cs_id == null || $scope.cs_id == '' || $scope.cs_id === undefined)
     {
         alert('generete id');
-        $scope.cs_id = $scope.generateId(255);
+        $scope.cs_id = $scope.randomString();
         alert("kalau null " + cs_id);
         var cs_id = JSON.stringify($scope.cs_id);
         localStorage.setItem('cs_id', cs_id);
