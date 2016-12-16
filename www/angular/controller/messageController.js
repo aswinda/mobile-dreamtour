@@ -36,6 +36,8 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
     {
         var gcm_id = $scope.gcm_id;
 
+        alert(gcm_id);
+
         $http(
         {
             url     : host +  "getCsGroup",
