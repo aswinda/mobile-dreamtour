@@ -23,9 +23,9 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
         alert('generete id');
         $scope.cs_id = $scope.randomString();
         alert("kalau null " + $scope.cs_id);
-        var cs_id = JSON.stringify($scope.cs_id);
-        alert("cs id nya " + cs_id);
-        localStorage.setItem('cs_id', cs_id);
+        //var cs_id = JSON.stringify($scope.cs_id);
+        alert("cs id nya " + $scope.cs_id);
+        localStorage.setItem('cs_id', $scope.cs_id);
     }
 
     // $scope.cs_group_id = localStorage.getItem('cs_group_id');
@@ -52,10 +52,10 @@ dreamtour.controller('MessageController', ['$scope', '$http','cfpLoadingBar', '$
 
             alert("hasilnya " + data);
 
-            var group = JSON.stringify(data);
-            localStorage.setItem('cs_group_id', group);
+            //var group = JSON.stringify(data);
+            localStorage.setItem('cs_group_id', $scope.cs_group_id);
 
-            alert("hasilnya group " + group);
+            alert("hasilnya group " + $scope.cs_group_id);
         })
         .error(function (error)
         {
